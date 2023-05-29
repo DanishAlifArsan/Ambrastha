@@ -26,18 +26,21 @@ public class PlayerAttack : MonoBehaviour
         projectile.SetActive(false);
         projectileTransform = projectile.GetComponent<Transform>();
         playerHealth = GetComponent<PlayerHealth>();
+        // projectileTransform.Rotate(Vector3.zero);
     }
 
     // Update is called once per frame
     void Update()
     {
-        projectileTransform.LookAt(enemy);
-        if(Input.GetMouseButtonDown(0) && cooldownTimer > attackCooldown && playerMovement.canAttack()) {    
+        // projectileTransform.LookAt(enemy);
+        if(Input.GetKeyDown(KeyCode.C) && cooldownTimer > attackCooldown && playerMovement.canAttack()) {    
             projectile.SetActive(true);
+            // projectileTransform.Rotate(Vector3.zero);
             Attack();
-        } else if (Input.GetMouseButtonUp(0)) {
-            projectile.SetActive(false);
-            playerMovement.body.bodyType = RigidbodyType2D.Dynamic;
+        } else if (Input.GetKeyUp(KeyCode.C)) {
+            // projectileTransform.Rotate(Vector3.zero);
+            projectile.SetActive(false);           
+            // playerMovement.body.bodyType = RigidbodyType2D.Dynamic;
         }
 
         cooldownTimer += Time.deltaTime;
@@ -52,9 +55,25 @@ public class PlayerAttack : MonoBehaviour
 
         // fireballs[findFireball()].transform.position = firePoint.position;
         // fireballs[findFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+        // float verticalInput = Input.GetAxis("Vertical");
+        
+        // if (verticalInput != 0)
+        // {
+        //     if (verticalInput > .1f)
+        //     {
+        //         projectileTransform.Rotate(new Vector3(-90,0,0));
+        //     }
+        //     if (verticalInput < -.1f)
+        //     {
+        //         projectileTransform.Rotate(new Vector3(90,0,0));
+        //     }
+            
+        // } else {
+        //     projectile.transform.Rotate(new Vector3(0, 90, 0));
+        // }
         
         cooldownTimer = 0;
-        playerMovement.body.bodyType = RigidbodyType2D.Static;
+        // playerMovement.body.bodyType = RigidbodyType2D.Static;
     }
 
     // private int findFireball() {
