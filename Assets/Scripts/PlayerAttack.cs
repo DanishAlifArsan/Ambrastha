@@ -32,6 +32,8 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AttackDirection();
+        
         // projectileTransform.LookAt(enemy);
         if(Input.GetKeyDown(KeyCode.C) && cooldownTimer > attackCooldown && playerMovement.canAttack()) {    
             projectile.SetActive(true);
@@ -55,25 +57,32 @@ public class PlayerAttack : MonoBehaviour
 
         // fireballs[findFireball()].transform.position = firePoint.position;
         // fireballs[findFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
-        // float verticalInput = Input.GetAxis("Vertical");
-        
-        // if (verticalInput != 0)
-        // {
-        //     if (verticalInput > .1f)
-        //     {
-        //         projectileTransform.Rotate(new Vector3(-90,0,0));
-        //     }
-        //     if (verticalInput < -.1f)
-        //     {
-        //         projectileTransform.Rotate(new Vector3(90,0,0));
-        //     }
-            
-        // } else {
-        //     projectile.transform.Rotate(new Vector3(0, 90, 0));
-        // }
         
         cooldownTimer = 0;
         // playerMovement.body.bodyType = RigidbodyType2D.Static;
+    }
+
+    private void AttackDirection() {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        if (horizontalInput > .1f)
+        {
+            projectileTransform.eulerAngles = new Vector3(0,90,0);
+        }
+        else if (horizontalInput < -.1f)
+        {
+            projectileTransform.eulerAngles = new Vector3(0,-90,0);
+        } 
+        
+        else if (verticalInput > .1f)
+        {
+            projectileTransform.eulerAngles = new Vector3(-90,0,0);
+        }
+        else if (verticalInput < -.1f)
+        {
+            projectileTransform.eulerAngles = new Vector3(90,0,0);
+        }
     }
 
     // private int findFireball() {

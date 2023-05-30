@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            if (currentStamina > 0 && canDash)
+            if (currentStamina - dashCost > 0 && canDash)
             {
                 currentStamina -= dashCost;
                 StartCoroutine(Dash());
@@ -92,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
 
         // stamina related 
         currentStaminaBar.fillAmount = currentStamina / startingStamina;
-        if (currentStamina < startingStamina && !isDashing) 
+        if (currentStamina < startingStamina) 
         {
             currentStamina += staminaRegen * Time.deltaTime;
         }
@@ -173,7 +173,7 @@ public class PlayerMovement : MonoBehaviour
         hitbox.enabled = true;
         body.gravityScale = playerGravity;
         isDashing = false;
-        yield return new WaitForSeconds(dashCooldown);
+        // yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
 
@@ -195,7 +195,7 @@ public class PlayerMovement : MonoBehaviour
     //gak kepake. hapus aja nanti
     public bool canAttack() {
         // return horizontalInput == 0 && isGrounded();
-        return true;
+        return !isDashing;
     }
     
 }
