@@ -15192,7 +15192,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -15314,7 +15314,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427009993}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d52f0d1f5f747345842c0fefe236fc9, type: 3}
   m_Name: 
@@ -20309,6 +20309,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 34906900173860211, guid: be8df5a522f880648926a6e08bea2665, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 34906900173860211, guid: be8df5a522f880648926a6e08bea2665, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967294
+      objectReference: {fileID: 0}
     - target: {fileID: 34906900173860212, guid: be8df5a522f880648926a6e08bea2665, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -20373,6 +20381,10 @@ PrefabInstance:
       propertyPath: TriggerModule.primitives.Array.data[0]
       value: 
       objectReference: {fileID: 1391098146}
+    - target: {fileID: 34906902114504882, guid: be8df5a522f880648926a6e08bea2665, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be8df5a522f880648926a6e08bea2665, type: 3}
 --- !u!1001 &8323854971149178868
