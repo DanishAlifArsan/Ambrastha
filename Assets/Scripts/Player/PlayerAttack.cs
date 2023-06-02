@@ -47,7 +47,7 @@ public class PlayerAttack : MonoBehaviour
 
         cooldownTimer += Time.deltaTime;
 
-        projectileTransform.position = new Vector3(this.transform.position.x, this.transform.position.y, projectileTransform.position.z);
+        // projectileTransform.position = new Vector3(this.transform.position.x, this.transform.position.y, projectileTransform.position.z);
     }
 
     private void Attack() {
