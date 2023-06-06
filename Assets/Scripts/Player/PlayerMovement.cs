@@ -101,9 +101,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //adjustable jump height
-        // if(Input.GetKeyUp(KeyCode.Space) && body.velocity.y > 0) {
-        //     body.velocity = new Vector2(body.velocity.x, body.velocity.y / 2);
-        // }
+        if(Input.GetKeyUp(KeyCode.Space) && body.velocity.y > 0) {
+            body.velocity = new Vector2(body.velocity.x, body.velocity.y / 2);
+        }
 
         // if(onWall()) {
         //     body.gravityScale = 0;

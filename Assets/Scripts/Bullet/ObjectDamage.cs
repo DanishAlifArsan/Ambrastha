@@ -18,7 +18,10 @@ public class ObjectDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.tag == "Player") {
-            collision.GetComponent<PlayerHealth>().TakeDamage(1);
+            if ( collision.GetComponent<PlayerHealth>() != null)
+            {
+                collision.GetComponent<PlayerHealth>().TakeDamage(1);
+            }
         }       
     }
 }

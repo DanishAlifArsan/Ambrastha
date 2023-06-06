@@ -24,6 +24,7 @@ public class DialogueText : DialogueBaseClass
     private void Start()
     {
         speakerBox.text = speakerName;
+        imageHolder.color = new Color(1, 1, 1, 1);
         imageHolder.sprite = characterSprite;
         StartCoroutine(WriteText(input,textHolder,delay));
     }
@@ -31,6 +32,9 @@ public class DialogueText : DialogueBaseClass
     // Update is called once per frame
     void Update()
     {
-      
+      if (isFinished)
+      {
+         imageHolder.color = new Color(1, 1, 1, 0);
+      }
     }
 }
