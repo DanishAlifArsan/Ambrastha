@@ -35,11 +35,11 @@ public class PlayerAttack : MonoBehaviour
         AttackDirection();
         
         // projectileTransform.LookAt(enemy);
-        if(Input.GetKeyDown(KeyCode.C) && cooldownTimer > attackCooldown && playerMovement.canAttack()) {    
+        if(Input.GetKeyDown(KeyCode.J) && cooldownTimer > attackCooldown && playerMovement.canAttack()) {    
             projectile.SetActive(true);
             // projectileTransform.Rotate(Vector3.zero);
             Attack();
-        } else if (Input.GetKeyUp(KeyCode.C)) {
+        } else if (Input.GetKeyUp(KeyCode.J)) {
             // projectileTransform.Rotate(Vector3.zero);
             projectile.SetActive(false);           
             // playerMovement.body.bodyType = RigidbodyType2D.Dynamic;

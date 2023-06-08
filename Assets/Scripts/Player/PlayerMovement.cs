@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashPower;
     [SerializeField] private float dashCost;
     [SerializeField] private float dashCooldown;
+    [SerializeField] private TrailRenderer trailRenderer;
     public Rigidbody2D body;
     // private Animator anim;
     private BoxCollider2D boxCollider;
@@ -49,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
         // anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
         currentStamina = startingStamina;
+        trailRenderer.emitting = false;
     }
 
     // Update is called once per frame
@@ -77,11 +79,11 @@ public class PlayerMovement : MonoBehaviour
         // anim.SetBool("run",horizontalInput != 0);
         // anim.SetBool("ground", isGrounded());
 
-        if(Input.GetKeyDown(KeyCode.Z)) {
+        if(Input.GetKeyDown(KeyCode.K)) {
             Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             if (currentStamina - dashCost > 0 && canDash)
             {
@@ -101,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //adjustable jump height
-        if(Input.GetKeyUp(KeyCode.Space) && body.velocity.y > 0) {
+        if(Input.GetKeyUp(KeyCode.K) && body.velocity.y > 0) {
             body.velocity = new Vector2(body.velocity.x, body.velocity.y / 2);
         }
 
@@ -169,7 +171,9 @@ public class PlayerMovement : MonoBehaviour
         float playerGravity = body.gravityScale;
         body.gravityScale = 0;
         body.velocity = new Vector2(transform.localScale.x * dashPower, 0);
+        trailRenderer.emitting = true;
         yield return new WaitForSeconds(dashTime);
+        trailRenderer.emitting = false;
         hitbox.enabled = true;
         body.gravityScale = playerGravity;
         isDashing = false;
