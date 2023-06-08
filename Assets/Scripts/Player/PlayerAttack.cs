@@ -17,14 +17,16 @@ public class PlayerAttack : MonoBehaviour
 
     // private Animator anim;
     private PlayerMovement playerMovement;
-    Transform projectileTransform;
+    // Transform projectileTransform;
+    ParticleSystem projectileParticle;
 
     void Awake()
     {
         // anim = GetComponent<Animator>();
-        playerMovement = GetComponent<PlayerMovement>();   
-        projectile.SetActive(false);
-        projectileTransform = projectile.GetComponent<Transform>();
+        playerMovement = GetComponent<PlayerMovement>();  
+        // projectileParticle = projectile.GetComponentInChildren<ParticleSystem>(); 
+        // projectileParticle.Stop();
+        // projectileTransform = projectile.GetComponent<Transform>();
         playerHealth = GetComponent<PlayerHealth>();
         // projectileTransform.Rotate(Vector3.zero);
     }
@@ -32,16 +34,17 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        projectileParticle = projectile.GetComponentInChildren<ParticleSystem>();
         AttackDirection();
         
         // projectileTransform.LookAt(enemy);
         if(Input.GetKeyDown(KeyCode.J) && cooldownTimer > attackCooldown && playerMovement.canAttack()) {    
-            projectile.SetActive(true);
+            projectileParticle.Play();
             // projectileTransform.Rotate(Vector3.zero);
             Attack();
         } else if (Input.GetKeyUp(KeyCode.J)) {
             // projectileTransform.Rotate(Vector3.zero);
-            projectile.SetActive(false);           
+           projectileParticle.Stop();       
             // playerMovement.body.bodyType = RigidbodyType2D.Dynamic;
         }
 
@@ -68,22 +71,23 @@ public class PlayerAttack : MonoBehaviour
 
         if (horizontalInput > .1f)
         {
-            projectileTransform.eulerAngles = new Vector3(0,90,0);
+            projectileParticle.transform.eulerAngles = new Vector3(0,90,0);
         }
         else if (horizontalInput < -.1f)
         {
-            projectileTransform.eulerAngles = new Vector3(0,-90,0);
+            projectileParticle.transform.eulerAngles = new Vector3(0,-90,0);
         } 
         
         else if (verticalInput > .1f)
         {
-            projectileTransform.eulerAngles = new Vector3(-90,0,0);
+            projectileParticle.transform.eulerAngles = new Vector3(-90,0,0);
         }
         else if (verticalInput < -.1f)
         {
-            projectileTransform.eulerAngles = new Vector3(90,0,0);
+            projectileParticle.transform.eulerAngles = new Vector3(90,0,0);
         }
     }
+
 
     // private int findFireball() {
     //     for (int i = 0; i < fireballs.Length; i++)
