@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectDamage : MonoBehaviour
 {
+    [SerializeField] private float damage;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class ObjectDamage : MonoBehaviour
         if(collision.tag == "Player") {
             if ( collision.GetComponent<PlayerHealth>() != null)
             {
-                collision.GetComponent<PlayerHealth>().TakeDamage(1);
+                collision.GetComponent<PlayerHealth>().TakeDamage(damage);
             }
         }       
     }

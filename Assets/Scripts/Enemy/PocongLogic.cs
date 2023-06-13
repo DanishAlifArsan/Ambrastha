@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PocongLogic : MonoBehaviour
 {
@@ -9,11 +10,18 @@ public class PocongLogic : MonoBehaviour
     [SerializeField] private ParticleSystem[] particleProjectiles;
     [SerializeField] private GameObject[] waypoints;
     [SerializeField] private float skillDuration;
+    [SerializeField] private Text stageNumber, stageName;
+    private bool isChange;
 
-    private bool isEntrance, isBulletMoving, isEntrance2, isEntrance3, isBattlePhase;
+    private bool isShooting = true;
+
+    private bool isEntrance, isBulletMoving, isEntrance2, isEntrance3, isBattlePhase, isSecondPhase;
     // Start is called before the first frame update
     void Start()
     {
+        stageName.text = "[Manuk Culi]";
+        stageNumber.text = "1/2";
+        isChange = true;
         foreach (var p in objectProjectiles)
         {
             p.SetActive(false);
@@ -28,6 +36,7 @@ public class PocongLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StageChange(isChange);
         if (isEntrance)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
@@ -65,9 +74,22 @@ public class PocongLogic : MonoBehaviour
                 objectProjectiles[2].transform.Translate(Vector3.right * 10 * Time.deltaTime);  
             }
         }
+
+        if (isSecondPhase)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, waypoints[2].transform.position, Time.deltaTime * enemySpeed);
+            if (isBulletMoving)
+            {
+                objectProjectiles[3].transform.RotateAround(transform.position, new Vector3(0,0,1), -90 * Time.deltaTime);
+                objectProjectiles[4].transform.RotateAround(transform.position, new Vector3(0,0,1), -90 * Time.deltaTime);
+                objectProjectiles[5].transform.RotateAround(transform.position, new Vector3(0,0,1), -90 * Time.deltaTime);
+                StartCoroutine(LaserShoot());
+            }
+        }
     }
 
     private IEnumerator Entrance() {
+        yield return new WaitForSeconds(1);
             objectProjectiles[0].transform.position = transform.position;
             isEntrance = true;
             yield return new WaitUntil(() => Vector2.Distance(transform.position, waypoints[0].transform.position) < .1f);
@@ -144,5 +166,65 @@ public class PocongLogic : MonoBehaviour
         yield return new WaitForSeconds(skillDuration);
         particleProjectiles[0].Stop();
         StartCoroutine(Entrance());
+    }
+
+    private void StageChange(bool isChange) {
+        if (isChange)
+        {
+            if (GetComponent<PlayerHealth>().currentHealth <= 0)
+            {
+                this.isChange = false;
+                GetComponent<PlayerHealth>().Respawn();
+                foreach (GameObject g in objectProjectiles)
+                {
+                    g.SetActive(false);
+                }
+                foreach (ParticleSystem p in particleProjectiles)
+                {
+                    p.Stop();
+                }
+                isEntrance = false;
+                isBulletMoving = false; 
+                isEntrance2 = false; 
+                isEntrance3 = false; 
+                isBattlePhase = false;
+                StopAllCoroutines();
+                StartCoroutine(SecondPhase());
+            }
+        }
+    }
+
+    private IEnumerator SecondPhase() {
+        stageNumber.text = "2/2";
+        stageName.text = "[Gelu]";
+        isSecondPhase = true;
+        yield return new WaitUntil(() => Vector2.Distance(transform.position, waypoints[2].transform.position) < .1f);
+        objectProjectiles[3].SetActive(true);
+        objectProjectiles[4].SetActive(true);
+        objectProjectiles[5].SetActive(true);
+        isBulletMoving = true;
+        // yield return new WaitForSeconds(skillDuration);
+    }
+
+    private IEnumerator LaserShoot() {
+        if (!isShooting) {
+            for (int i = 0; i < objectProjectiles[3].transform.childCount; i++)
+            {
+                objectProjectiles[3].transform.GetChild(i).gameObject.SetActive(true);
+                objectProjectiles[4].transform.GetChild(i).gameObject.SetActive(true);
+                objectProjectiles[5].transform.GetChild(i).gameObject.SetActive(true);
+            }
+            yield return new WaitForSeconds(skillDuration);
+            isShooting = true;
+        } else {
+            for (int i = 0; i < objectProjectiles[3].transform.childCount; i++)
+            {
+                objectProjectiles[3].transform.GetChild(i).gameObject.SetActive(false);
+                objectProjectiles[4].transform.GetChild(i).gameObject.SetActive(false);
+                objectProjectiles[5].transform.GetChild(i).gameObject.SetActive(false);
+            }
+            yield return new WaitForSeconds(skillDuration);
+            isShooting = false;
+        }
     }
 }

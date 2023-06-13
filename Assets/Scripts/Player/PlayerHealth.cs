@@ -10,7 +10,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Image currentHealthBar; 
     public float currentHealth {get; private set;}
     // private Animator anim;
-    public bool dead;
+    [HideInInspector] public bool dead;
+    // [HideInInspector] public float damageMultiplier = 10;
 
     [Header ("IFrame")]
     [SerializeField] private float iFrameDuration;
@@ -33,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public void TakeDamage(float _damage) {
+        // _damage /= damageMultiplier;
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
         
         if (currentHealth > 0) {
@@ -85,17 +87,19 @@ public class PlayerHealth : MonoBehaviour
         gameObject.SetActive(false); 
     }
 
-    // public void Respawn() {
-    //     dead = false;
+    public void Respawn() {
+        dead = false;
 
-    //     addHealth(startingHealth);
-    //     // anim.ResetTrigger("die");
-    //     // anim.Play("Idle");
-    //     StartCoroutine(IFrames());
+        addHealth(startingHealth);
 
-    //     foreach (Behaviour comp in components)
-    //     {
-    //         comp.enabled = true;
-    //     }
-    // }
+        gameObject.SetActive(true);
+        // anim.ResetTrigger("die");
+        // anim.Play("Idle");
+        // StartCoroutine(IFrames());
+
+        // foreach (Behaviour comp in components)
+        // {
+        //     comp.enabled = true;
+        // }
+    }
 }

@@ -65,7 +65,6 @@ public class PocongBattle : MonoBehaviour
         ShowDialogUI(dialogUI,true);
         yield return new WaitUntil(() => !dh.activeInHierarchy);
         ShowDialogUI(dialogUI, false);
-        yield return new WaitForSeconds(1);
         pocongPlaceholder.SetActive(false);
         pocong.SetActive(true);
     }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2028497945843331303}
   - component: {fileID: 1590293574986062075}
   m_Layer: 5
-  m_Name: scissor
+  m_Name: Dewi Sekartaji
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 3337012804045242532}
   - component: {fileID: 3735978897172844673}
   m_Layer: 5
-  m_Name: rock
+  m_Name: Klana Sewandana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 5884481947676398976}
   - component: {fileID: 7719195111226992305}
   m_Layer: 5
-  m_Name: paper
+  m_Name: ' Panji Asmorobangun'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1/2
+  m_Text: 
 --- !u!1 &4843821281222967966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,7 +1311,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[manuk cali]'
+  m_Text: 
 --- !u!1 &8658415446491367745
 GameObject:
   m_ObjectHideFlags: 0

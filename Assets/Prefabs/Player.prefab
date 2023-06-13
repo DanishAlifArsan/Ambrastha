@@ -5083,7 +5083,7 @@ GameObject:
   - component: {fileID: 34906900952434238}
   - component: {fileID: 34906900952434209}
   m_Layer: 0
-  m_Name: paper
+  m_Name: Panji Asmorobangun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5103,7 +5103,7 @@ Transform:
   m_Children:
   - {fileID: 34906900187240959}
   m_Father: {fileID: 7343022105857671581}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!198 &34906900952434239
 ParticleSystem:
@@ -9899,6 +9899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
+  damage: 1
 --- !u!1 &34906902114504779
 GameObject:
   m_ObjectHideFlags: 0
@@ -10038,9 +10039,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7778954297837749494}
   - {fileID: 34906900952434208}
   - {fileID: 2524207221294101454}
-  - {fileID: 7778954297837749494}
   m_Father: {fileID: 34906900173860212}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10057,7 +10058,7 @@ GameObject:
   - component: {fileID: 2554827352915586514}
   - component: {fileID: 5295692609037097525}
   m_Layer: 0
-  m_Name: rock
+  m_Name: Klana Sewandana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10076,7 +10077,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7343022105857671581}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!198 &3070464153797185588
 ParticleSystem:
@@ -14872,6 +14873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
+  damage: 1
 --- !u!1 &7203055521848743039
 GameObject:
   m_ObjectHideFlags: 0
@@ -14885,7 +14887,7 @@ GameObject:
   - component: {fileID: 5033552241140551905}
   - component: {fileID: 1582005192665742605}
   m_Layer: 0
-  m_Name: scissor
+  m_Name: Dewi Sekartaji
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14904,7 +14906,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7343022105857671581}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!198 &5664995326022105276
 ParticleSystem:
@@ -19700,6 +19702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
+  damage: 1
 --- !u!1 &8981126793315941415
 GameObject:
   m_ObjectHideFlags: 0

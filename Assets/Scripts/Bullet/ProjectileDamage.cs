@@ -7,6 +7,8 @@ public class ProjectileDamage : MonoBehaviour
     // ParticleSystem ps;
     [SerializeField] private PlayerHealth playerHealth;
 
+    [SerializeField] private float damage;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -34,7 +36,7 @@ public class ProjectileDamage : MonoBehaviour
         // iterate
         for (int i = 0; i < numEnter; i++)
         {
-            playerHealth.TakeDamage(1);
+            playerHealth.TakeDamage(damage);
             // ParticleSystem.Particle p = enter[i];
             // p.startColor = new Color32(255, 0, 0, 255);
             // enter[i] = p;
