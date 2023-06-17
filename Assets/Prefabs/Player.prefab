@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 34906900173860209}
   - component: {fileID: 34906900173860213}
   - component: {fileID: 34906900173860214}
-  - component: {fileID: 34906900173860215}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -182,24 +181,6 @@ MonoBehaviour:
   attackCooldown: 0.5
   projectile: {fileID: 1109606240496531868}
   enemy: {fileID: 0}
---- !u!114 &34906900173860215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34906900173860208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f31d3972843bef4e95dc52252764ea6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 10
-  currentHealthBar: {fileID: 0}
-  dead: 0
-  iFrameDuration: 1
-  numberOfFlash: 1
-  components: []
 --- !u!1 &34906900187240958
 GameObject:
   m_ObjectHideFlags: 0
@@ -9911,6 +9892,7 @@ GameObject:
   - component: {fileID: 34906902114504780}
   - component: {fileID: 34906902114504882}
   - component: {fileID: 34906902114504881}
+  - component: {fileID: 2124321049473615600}
   m_Layer: 7
   m_Name: Hitbox
   m_TagString: Player
@@ -10011,6 +9993,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.34854499, y: 0.40439433}
   m_EdgeRadius: 0
+--- !u!114 &2124321049473615600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34906902114504779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f31d3972843bef4e95dc52252764ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 10
+  currentHealthBar: {fileID: 0}
+  dead: 0
 --- !u!1 &1109606240496531868
 GameObject:
   m_ObjectHideFlags: 0

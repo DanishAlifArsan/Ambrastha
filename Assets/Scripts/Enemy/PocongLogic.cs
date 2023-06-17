@@ -13,8 +13,6 @@ public class PocongLogic : MonoBehaviour
     [SerializeField] private Text stageNumber, stageName;
     private bool isChange;
 
-    private bool isShooting = true;
-
     private bool isEntrance, isBulletMoving, isEntrance2, isEntrance3, isBattlePhase, isSecondPhase;
     // Start is called before the first frame update
     void Start()
@@ -83,7 +81,6 @@ public class PocongLogic : MonoBehaviour
                 objectProjectiles[3].transform.RotateAround(transform.position, new Vector3(0,0,1), -90 * Time.deltaTime);
                 objectProjectiles[4].transform.RotateAround(transform.position, new Vector3(0,0,1), -90 * Time.deltaTime);
                 objectProjectiles[5].transform.RotateAround(transform.position, new Vector3(0,0,1), -90 * Time.deltaTime);
-                StartCoroutine(LaserShoot());
             }
         }
     }
@@ -203,28 +200,29 @@ public class PocongLogic : MonoBehaviour
         objectProjectiles[4].SetActive(true);
         objectProjectiles[5].SetActive(true);
         isBulletMoving = true;
+        StartCoroutine(StopLaser());
         // yield return new WaitForSeconds(skillDuration);
     }
 
     private IEnumerator LaserShoot() {
-        if (!isShooting) {
-            for (int i = 0; i < objectProjectiles[3].transform.childCount; i++)
-            {
-                objectProjectiles[3].transform.GetChild(i).gameObject.SetActive(true);
-                objectProjectiles[4].transform.GetChild(i).gameObject.SetActive(true);
-                objectProjectiles[5].transform.GetChild(i).gameObject.SetActive(true);
-            }
-            yield return new WaitForSeconds(skillDuration);
-            isShooting = true;
-        } else {
-            for (int i = 0; i < objectProjectiles[3].transform.childCount; i++)
-            {
-                objectProjectiles[3].transform.GetChild(i).gameObject.SetActive(false);
-                objectProjectiles[4].transform.GetChild(i).gameObject.SetActive(false);
-                objectProjectiles[5].transform.GetChild(i).gameObject.SetActive(false);
-            }
-            yield return new WaitForSeconds(skillDuration);
-            isShooting = false;
+        for (int i = 0; i < objectProjectiles[3].transform.childCount; i++)
+        {
+            objectProjectiles[3].transform.GetChild(i).gameObject.SetActive(true);
+            objectProjectiles[4].transform.GetChild(i).gameObject.SetActive(true);
+            objectProjectiles[5].transform.GetChild(i).gameObject.SetActive(true);
         }
+        yield return new WaitForSeconds(skillDuration);
+        StartCoroutine(StopLaser());
+    }
+
+    private IEnumerator StopLaser() {   
+        for (int i = 0; i < objectProjectiles[3].transform.childCount; i++)
+        {
+            objectProjectiles[3].transform.GetChild(i).gameObject.SetActive(false);
+            objectProjectiles[4].transform.GetChild(i).gameObject.SetActive(false);
+            objectProjectiles[5].transform.GetChild(i).gameObject.SetActive(false);
+        }
+        yield return new WaitForSeconds(2);
+        StartCoroutine(LaserShoot());
     }
 }

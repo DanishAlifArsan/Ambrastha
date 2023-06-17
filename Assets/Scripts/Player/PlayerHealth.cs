@@ -13,13 +13,13 @@ public class PlayerHealth : MonoBehaviour
     [HideInInspector] public bool dead;
     // [HideInInspector] public float damageMultiplier = 10;
 
-    [Header ("IFrame")]
-    [SerializeField] private float iFrameDuration;
-    [SerializeField] private int numberOfFlash;
-    private SpriteRenderer spriteRend;
+    // [Header ("IFrame")]
+    // [SerializeField] private float iFrameDuration;
+    // [SerializeField] private int numberOfFlash;
+    // private SpriteRenderer spriteRend;
 
-    [Header ("Components")]
-    [SerializeField] private Behaviour[] components;
+    // [Header ("Components")]
+    // [SerializeField] private Behaviour[] components;
 
     // [Header ("Death sound")]
     // [SerializeField] private AudioClip deathSound;
@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = startingHealth;
         // anim = GetComponent<Animator>();
-        spriteRend = GetComponent<SpriteRenderer>();
+        // spriteRend = GetComponent<SpriteRenderer>();
         // totalHealthBar.fillAmount = currentHealth / startingHealth;
     }
 
@@ -84,7 +84,12 @@ public class PlayerHealth : MonoBehaviour
     // }
 
     public void Deactivate() {
-        gameObject.SetActive(false); 
+        if (transform.parent != null)
+        {
+            transform.parent.gameObject.SetActive(false); 
+        } else {
+            gameObject.SetActive(false); 
+        }
     }
 
     public void Respawn() {

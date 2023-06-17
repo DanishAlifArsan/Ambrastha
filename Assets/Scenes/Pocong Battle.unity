@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94664f534f190864b94852faf0c26d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 383748724}
+  playerHealth: {fileID: 925340763}
   damage: 1
 --- !u!114 &12896408
 MonoBehaviour:
@@ -5016,7 +5016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94664f534f190864b94852faf0c26d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 383748724}
+  playerHealth: {fileID: 925340763}
   damage: 1
 --- !u!199 &28775587
 ParticleSystemRenderer:
@@ -8852,7 +8852,7 @@ ParticleSystem:
   TriggerModule:
     enabled: 1
     serializedVersion: 2
-    inside: 1
+    inside: 0
     outside: 0
     enter: 2
     exit: 0
@@ -9853,7 +9853,7 @@ MonoBehaviour:
   delay: 0.01
   speakerName: Sada
   speakerBox: {fileID: 594300065}
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: a9cf79d3c72c00e47a8bf9d923ce4506, type: 3}
   imageHolder: {fileID: 938224612}
 --- !u!114 &37486731
 MonoBehaviour:
@@ -9878,7 +9878,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -906543302654962400, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10018,7 +10018,7 @@ MonoBehaviour:
   delay: 0.01
   speakerName: Sena
   speakerBox: {fileID: 594300065}
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: 209e9cab720f7854ab354369693f8327, type: 3}
   imageHolder: {fileID: 938224612}
 --- !u!114 &89702180
 MonoBehaviour:
@@ -10043,7 +10043,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -906543302654962400, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10358,7 +10358,7 @@ MonoBehaviour:
   delay: 0.01
   speakerName: Sena
   speakerBox: {fileID: 594300065}
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: 209e9cab720f7854ab354369693f8327, type: 3}
   imageHolder: {fileID: 938224612}
 --- !u!114 &343661145
 MonoBehaviour:
@@ -10383,7 +10383,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -906543302654962400, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10512,7 +10512,7 @@ MonoBehaviour:
   delay: 0.01
   speakerName: Sada
   speakerBox: {fileID: 594300065}
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: a9cf79d3c72c00e47a8bf9d923ce4506, type: 3}
   imageHolder: {fileID: 938224612}
 --- !u!114 &352472117
 MonoBehaviour:
@@ -10537,7 +10537,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -906543302654962400, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10666,7 +10666,7 @@ MonoBehaviour:
   delay: 0.01
   speakerName: Sada
   speakerBox: {fileID: 594300065}
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: a9cf79d3c72c00e47a8bf9d923ce4506, type: 3}
   imageHolder: {fileID: 938224612}
 --- !u!114 &372791339
 MonoBehaviour:
@@ -10691,7 +10691,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -906543302654962400, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10782,7 +10782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 34906900173860208, guid: be8df5a522f880648926a6e08bea2665, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 34906900173860212, guid: be8df5a522f880648926a6e08bea2665, type: 3}
       propertyPath: m_RootOrder
@@ -10860,19 +10860,17 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 2124321049473615600, guid: be8df5a522f880648926a6e08bea2665, type: 3}
+      propertyPath: currentHealthBar
+      value: 
+      objectReference: {fileID: 1052939034}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be8df5a522f880648926a6e08bea2665, type: 3}
---- !u!114 &383748724 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 34906900173860215, guid: be8df5a522f880648926a6e08bea2665, type: 3}
+--- !u!4 &383748725 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 34906900173860212, guid: be8df5a522f880648926a6e08bea2665, type: 3}
   m_PrefabInstance: {fileID: 383748723}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 26392936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f31d3972843bef4e95dc52252764ea6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &383748727 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 34906900173860214, guid: be8df5a522f880648926a6e08bea2665, type: 3}
@@ -10955,7 +10953,7 @@ MonoBehaviour:
   delay: 0.01
   speakerName: Sada
   speakerBox: {fileID: 594300065}
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: a9cf79d3c72c00e47a8bf9d923ce4506, type: 3}
   imageHolder: {fileID: 938224612}
 --- !u!114 &565611322
 MonoBehaviour:
@@ -10980,7 +10978,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -906543302654962400, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11331,7 +11329,7 @@ MonoBehaviour:
   delay: 0.01
   speakerName: Sada
   speakerBox: {fileID: 594300065}
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: a9cf79d3c72c00e47a8bf9d923ce4506, type: 3}
   imageHolder: {fileID: 938224612}
 --- !u!114 &744358961
 MonoBehaviour:
@@ -11356,7 +11354,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -906543302654962400, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11485,7 +11483,7 @@ MonoBehaviour:
   delay: 0.01
   speakerName: Sada
   speakerBox: {fileID: 594300065}
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: a9cf79d3c72c00e47a8bf9d923ce4506, type: 3}
   imageHolder: {fileID: 938224612}
 --- !u!114 &773025133
 MonoBehaviour:
@@ -11510,7 +11508,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -906543302654962400, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11617,7 +11615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5099503864786940514, guid: f7cf5fa679b2f824c967f00fef930999, type: 3}
       propertyPath: input
-      value: Gunakan arah panah untuk bergerak
+      value: Gunakan AD untuk bergerak
       objectReference: {fileID: 0}
     - target: {fileID: 5099503864786940514, guid: f7cf5fa679b2f824c967f00fef930999, type: 3}
       propertyPath: imageHolder
@@ -11630,7 +11628,7 @@ PrefabInstance:
     - target: {fileID: 5099503864786940514, guid: f7cf5fa679b2f824c967f00fef930999, type: 3}
       propertyPath: characterSprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: a9cf79d3c72c00e47a8bf9d923ce4506, type: 3}
     - target: {fileID: 5099503865714754217, guid: f7cf5fa679b2f824c967f00fef930999, type: 3}
       propertyPath: m_Name
       value: Tutorial UI
@@ -11864,7 +11862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 882909525}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.42, y: -2.29, z: 0.56841606}
+  m_LocalPosition: {x: 10.71, y: -2.29, z: 0.56841606}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11935,7 +11933,7 @@ MonoBehaviour:
   - {fileID: 1639028046}
   - {fileID: 990437536}
   - {fileID: 572833664}
-  skillDuration: 2
+  skillDuration: 5
   stageNumber: {fileID: 962529603}
   stageName: {fileID: 1935612468}
 --- !u!114 &882909530
@@ -11950,12 +11948,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f31d3972843bef4e95dc52252764ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 5
+  startingHealth: 50
   currentHealthBar: {fileID: 1052939033}
   dead: 0
-  iFrameDuration: 0
-  numberOfFlash: 0
-  components: []
 --- !u!114 &882909531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11969,6 +11964,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!114 &925340763 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2124321049473615600, guid: be8df5a522f880648926a6e08bea2665, type: 3}
+  m_PrefabInstance: {fileID: 383748723}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f31d3972843bef4e95dc52252764ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &938224612 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5099503866034640100, guid: f7cf5fa679b2f824c967f00fef930999, type: 3}
@@ -12026,7 +12032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94664f534f190864b94852faf0c26d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 383748724}
+  playerHealth: {fileID: 925340763}
   damage: 1
 --- !u!199 &960850625
 ParticleSystemRenderer:
@@ -15862,7 +15868,7 @@ ParticleSystem:
   TriggerModule:
     enabled: 1
     serializedVersion: 2
-    inside: 1
+    inside: 0
     outside: 0
     enter: 2
     exit: 0
@@ -16843,7 +16849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990437536}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.16, y: -4.94, z: 0.01239109}
+  m_LocalPosition: {x: -15.37, y: -4.94, z: 0.01239109}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17023,6 +17029,7 @@ GameObject:
   - component: {fileID: 1060446234}
   - component: {fileID: 1060446233}
   - component: {fileID: 1060446232}
+  - component: {fileID: 1060446235}
   m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
@@ -17103,6 +17110,16 @@ Tilemap:
   m_GameObject: {fileID: 1060446228}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: -14, y: -5, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -12, y: -5, z: 0}
     second:
       serializedVersion: 2
@@ -17313,6 +17330,216 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 13, y: -5, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 13, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 13, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 13, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: -1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 13, y: -1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 13, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 13, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 13, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 13, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: 4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 13, y: 4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: 5, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 13, y: 5, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 7
@@ -17321,6 +17548,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 7a1daf754295b4e46bcf7a8fbbe215f4, type: 2}
   - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: 296f2f86d43a08a448efba7c9ab6dea8, type: 2}
+  - m_RefCount: 22
+    m_Data: {fileID: 11400000, guid: f763decf41460224da0e7a28f5ea5cd2, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 7
     m_Data: {fileID: 157451682, guid: edd15a20885a65246b50f56bc2975e7d, type: 3}
@@ -17328,8 +17557,10 @@ Tilemap:
     m_Data: {fileID: -402812902, guid: edd15a20885a65246b50f56bc2975e7d, type: 3}
   - m_RefCount: 8
     m_Data: {fileID: 2082649901, guid: edd15a20885a65246b50f56bc2975e7d, type: 3}
+  - m_RefCount: 22
+    m_Data: {fileID: 1328104182, guid: edd15a20885a65246b50f56bc2975e7d, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 21
+  - m_RefCount: 43
     m_Data:
       e00: 1
       e01: 0
@@ -17348,13 +17579,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 21
+  - m_RefCount: 43
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -12, y: -5, z: 0}
-  m_Size: {x: 24, y: 5, z: 1}
+  m_Origin: {x: -14, y: -5, z: 0}
+  m_Size: {x: 28, y: 12, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -17385,7 +17616,7 @@ CompositeCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
@@ -17394,20 +17625,32 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1060446234}
     m_ColliderPaths:
-    - - X: -125000000
-        Y: -55000000
-      - X: 125000000
-        Y: -55000000
+    - - X: 125000000
+        Y: 65000000
       - X: 125000000
         Y: -35000000
       - X: -125000000
         Y: -35000000
+      - X: -125000000
+        Y: 65000000
+      - X: -145000000
+        Y: 65000000
+      - X: -145000000
+        Y: -55000000
+      - X: 145000000
+        Y: -55000000
+      - X: 145000000
+        Y: 65000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 12.49997, y: -5.5}
+    - - {x: 14.499971, y: -5.5}
+      - {x: 14.499971, y: 6.5}
+      - {x: 12.5, y: 6.499971}
       - {x: 12.49997, y: -3.5}
-      - {x: -12.5, y: -3.5000293}
-      - {x: -12.49997, y: -5.5}
+      - {x: -12.5, y: -3.4999704}
+      - {x: -12.50003, y: 6.5}
+      - {x: -14.5, y: 6.499971}
+      - {x: -14.499971, y: -5.5}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1060446233
@@ -17447,6 +17690,25 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+--- !u!251 &1060446235
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060446228}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1078477104
 GameObject:
   m_ObjectHideFlags: 0
@@ -17502,7 +17764,7 @@ MonoBehaviour:
   delay: 0.01
   speakerName: Sada
   speakerBox: {fileID: 594300065}
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: a9cf79d3c72c00e47a8bf9d923ce4506, type: 3}
   imageHolder: {fileID: 938224612}
 --- !u!114 &1078477107
 MonoBehaviour:
@@ -17527,7 +17789,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -906543302654962400, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17656,7 +17918,7 @@ MonoBehaviour:
   delay: 0.01
   speakerName: Sena
   speakerBox: {fileID: 594300065}
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: 209e9cab720f7854ab354369693f8327, type: 3}
   imageHolder: {fileID: 938224612}
 --- !u!114 &1093644197
 MonoBehaviour:
@@ -17681,7 +17943,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -906543302654962400, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17777,7 +18039,7 @@ PrefabInstance:
     - target: {fileID: 5099503864786940514, guid: f7cf5fa679b2f824c967f00fef930999, type: 3}
       propertyPath: characterSprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 209e9cab720f7854ab354369693f8327, type: 3}
     - target: {fileID: 5099503865714754217, guid: f7cf5fa679b2f824c967f00fef930999, type: 3}
       propertyPath: m_Name
       value: Dialogue UI
@@ -17950,7 +18212,7 @@ MonoBehaviour:
   delay: 0.01
   speakerName: Sada
   speakerBox: {fileID: 594300065}
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: a9cf79d3c72c00e47a8bf9d923ce4506, type: 3}
   imageHolder: {fileID: 938224612}
 --- !u!114 &1251692984
 MonoBehaviour:
@@ -17975,7 +18237,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -906543302654962400, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18251,7 +18513,7 @@ MonoBehaviour:
   delay: 0.01
   speakerName: Sada
   speakerBox: {fileID: 594300065}
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: a9cf79d3c72c00e47a8bf9d923ce4506, type: 3}
   imageHolder: {fileID: 938224612}
 --- !u!114 &1361664206
 MonoBehaviour:
@@ -18276,7 +18538,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -906543302654962400, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18396,7 +18658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94664f534f190864b94852faf0c26d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 383748724}
+  playerHealth: {fileID: 925340763}
   damage: 1
 --- !u!199 &1370139046
 ParticleSystemRenderer:
@@ -22232,7 +22494,7 @@ ParticleSystem:
   TriggerModule:
     enabled: 1
     serializedVersion: 2
-    inside: 1
+    inside: 0
     outside: 0
     enter: 2
     exit: 0
@@ -23550,7 +23812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94664f534f190864b94852faf0c26d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 383748724}
+  playerHealth: {fileID: 925340763}
   damage: 1
 --- !u!114 &1574709783
 MonoBehaviour:
@@ -28400,7 +28662,7 @@ MonoBehaviour:
   delay: 0.01
   speakerName: Sada
   speakerBox: {fileID: 594300065}
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: a9cf79d3c72c00e47a8bf9d923ce4506, type: 3}
   imageHolder: {fileID: 938224612}
 --- !u!114 &1600230629
 MonoBehaviour:
@@ -28425,7 +28687,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -906543302654962400, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -28523,7 +28785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639028046}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.12, y: -4.94, z: 0.01239109}
+  m_LocalPosition: {x: 6.41, y: -4.94, z: 0.01239109}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33370,7 +33632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94664f534f190864b94852faf0c26d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 383748724}
+  playerHealth: {fileID: 925340763}
   damage: 1
 --- !u!1 &1714246760
 GameObject:
@@ -33545,12 +33807,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad7688e3f741e841b28034578d39c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: Gunakan tombol C untuk menembak. Kamu dapat mengarahkan arah serangan dengan
-    arah panah
+  input: Gunakan tombol J untuk menembak. Kamu dapat mengarahkan arah serangan dengan
+    WASD
   delay: 0.01
   speakerName: Sada
   speakerBox: {fileID: 594300065}
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: a9cf79d3c72c00e47a8bf9d923ce4506, type: 3}
   imageHolder: {fileID: 938224612}
 --- !u!114 &1975727907
 MonoBehaviour:
@@ -33575,7 +33837,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -906543302654962400, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -33660,6 +33922,8 @@ GameObject:
   - component: {fileID: 1980334281}
   - component: {fileID: 1980334280}
   - component: {fileID: 1980334279}
+  - component: {fileID: 1980334282}
+  - component: {fileID: 1980334283}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -33726,13 +33990,42 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980334278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: -0.06, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1980334282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980334278}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d26ac2a08c260d489d8f9f821d34d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1060446231}
+--- !u!114 &1980334283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980334278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80fe0b0be3ea838419c29d4275ca01de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 383748725}
+  cameraSpeed: 2
+  minValue: {x: -3.66, y: 0, z: -10}
+  maxValue: {x: 3.67, y: 1.34, z: -10}
 --- !u!1 &2075060152 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 34906900952434237, guid: be8df5a522f880648926a6e08bea2665, type: 3}
@@ -33793,7 +34086,7 @@ MonoBehaviour:
   delay: 0.01
   speakerName: Sada
   speakerBox: {fileID: 594300065}
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: a9cf79d3c72c00e47a8bf9d923ce4506, type: 3}
   imageHolder: {fileID: 938224612}
 --- !u!114 &2103314304
 MonoBehaviour:
@@ -33818,7 +34111,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -906543302654962400, guid: 9f3dd1cdaccf5e349a90e41cf15b4a7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
