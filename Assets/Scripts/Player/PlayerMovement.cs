@@ -79,11 +79,11 @@ public class PlayerMovement : MonoBehaviour
         // anim.SetBool("run",horizontalInput != 0);
         // anim.SetBool("ground", isGrounded());
 
-        if(Input.GetKeyDown(KeyCode.K)) {
+        if(Input.GetButtonDown("Jump")) {
             Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetButtonDown("Dash"))
         {
             if (currentStamina - dashCost > 0 && canDash)
             {
@@ -103,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //adjustable jump height
-        if(Input.GetKeyUp(KeyCode.K) && body.velocity.y > 0) {
+        if(Input.GetButtonUp("Jump") && body.velocity.y > 0) {
             body.velocity = new Vector2(body.velocity.x, body.velocity.y / 2);
         }
 
@@ -158,9 +158,9 @@ public class PlayerMovement : MonoBehaviour
             body.velocity = new Vector2(body.velocity.x,jumpPower);
         } else {
             if (jumpCounter > 0) {
-                    body.velocity = new Vector2(body.velocity.x,jumpPower);
-                    jumpCounter--;
-                }
+                body.velocity = new Vector2(body.velocity.x,jumpPower);
+                jumpCounter--;
+            }
         }
     }
 

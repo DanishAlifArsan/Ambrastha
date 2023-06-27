@@ -38,13 +38,14 @@ public class PlayerAttack : MonoBehaviour
         AttackDirection();
         
         // projectileTransform.LookAt(enemy);
-        if(Input.GetKeyDown(KeyCode.J) && cooldownTimer > attackCooldown && playerMovement.canAttack()) {    
+        if(Input.GetButtonDown("Fire1") && cooldownTimer > attackCooldown && playerMovement.canAttack()) {    
             projectileParticle.Play();
             // projectileTransform.Rotate(Vector3.zero);
             Attack();
-        } else if (Input.GetKeyUp(KeyCode.J)) {
+        } else if (Input.GetButtonUp("Fire1") || !playerMovement.canAttack()) {
             // projectileTransform.Rotate(Vector3.zero);
-           projectileParticle.Stop();       
+           projectileParticle.Stop();    
+           ResetAttackDirection();   
             // playerMovement.body.bodyType = RigidbodyType2D.Dynamic;
         }
 
@@ -85,6 +86,15 @@ public class PlayerAttack : MonoBehaviour
         else if (verticalInput < -.1f)
         {
             projectileParticle.transform.eulerAngles = new Vector3(90,0,0);
+        }
+    }
+
+    private void ResetAttackDirection() {
+        if (transform.localScale.x > .1f)
+        {
+            projectileParticle.transform.eulerAngles = new Vector3(0,90,0);
+        } else {
+            projectileParticle.transform.eulerAngles = new Vector3(0,-90,0);
         }
     }
 
