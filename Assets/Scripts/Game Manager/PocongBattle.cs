@@ -3,19 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PocongBattle : MonoBehaviour
 {
     [SerializeField] private GameObject battleUI;
     [SerializeField] private GameObject dialogUI;
     [SerializeField] private GameObject tutorialUI;
+    [SerializeField] private GameObject endDialogue;
     [SerializeField] private GameObject pocong;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerAttack playerAttack;
+    [SerializeField] private GameObject camera;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject pocongPlaceholder;
     [SerializeField] private GameObject dh;
     [SerializeField] private GameObject dh1;
+    [SerializeField] private GameObject dh2;
 
     private bool pocongToPosition = false;
 
@@ -52,14 +56,21 @@ public class PocongBattle : MonoBehaviour
         yield return new WaitUntil(() => !dh1.activeInHierarchy);
         tutorialUI.SetActive(false);
         playerMovement.enabled = true;
+        playerAttack.enabled = true;
         yield return new WaitUntil(() => Vector3.Distance(player.transform.position, temp) > .1f);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         playerMovement.enabled = false;
+        playerAttack.enabled = false;
         StartCoroutine(BattleEntrance());
     }
 
     private IEnumerator BattleEntrance()
     {
+        camera.GetComponent<CameraFollow>().enabled = false;
+        camera.transform.position = new Vector3(0,0, -10);
+        float temp = camera.GetComponent<Camera>().orthographicSize;
+        float newSize = Mathf.MoveTowards(camera.GetComponent<Camera>().orthographicSize, 10, 2);
+        camera.GetComponent<Camera>().orthographicSize = newSize;
         pocongPlaceholder.SetActive(true);
         pocongToPosition = true;
         ShowDialogUI(dialogUI,true);
@@ -67,6 +78,8 @@ public class PocongBattle : MonoBehaviour
         ShowDialogUI(dialogUI, false);
         pocongPlaceholder.SetActive(false);
         pocong.SetActive(true);
+        camera.GetComponent<Camera>().orthographicSize = temp;
+        camera.GetComponent<CameraFollow>().enabled = true;
     }
 
     // Update is called once per frame
@@ -76,6 +89,19 @@ public class PocongBattle : MonoBehaviour
         {
             pocongPlaceholder.transform.position = Vector3.MoveTowards(pocong.transform.position, pocongPlaceholder.transform.position, Time.deltaTime * 10);  
         }
+
+        if(pocong.GetComponent<PlayerHealth>().dead) {
+            StartCoroutine(BattleEnd());
+            
+        }
         
+    }
+
+    private IEnumerator BattleEnd() {
+        ShowDialogUI(endDialogue,true);
+        yield return new WaitUntil(() => !dh2.activeInHierarchy);
+        ShowDialogUI(endDialogue, false);
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(2);
     }
 }
