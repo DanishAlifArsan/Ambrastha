@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float startingHealth;
     // [SerializeField] private Image totalHealthBar; 
     [SerializeField] private Image currentHealthBar; 
+    [SerializeField] private Image avatar;
+    [SerializeField] private Sprite hurtAvatar;
     public float currentHealth {get; private set;}
     // private Animator anim;
     [HideInInspector] public bool dead;
@@ -38,6 +40,10 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
         
         if (currentHealth > 0) {
+            if (avatar !=  null)
+            {
+                StartCoroutine(Hurt());
+            }
             // anim.SetTrigger("hurt");
             // StartCoroutine(IFrames());
             // SoundManager.instance.playSound(hurtSound);
@@ -65,10 +71,19 @@ public class PlayerHealth : MonoBehaviour
         {
             Deactivate();
         }
+
+        
     }
 
     public void addHealth(float _value) {
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+    }
+
+    private IEnumerator Hurt() {
+        Sprite temp = avatar.sprite;
+        avatar.sprite = hurtAvatar;
+        yield return new WaitForSeconds(0.25f);
+        avatar.sprite = temp;
     }
  
     // private IEnumerator IFrames() {
