@@ -28,6 +28,7 @@ public class PlayerAttack : MonoBehaviour
         // projectileParticle.Stop();
         // projectileTransform = projectile.GetComponent<Transform>();
         playerHealth = GetComponent<PlayerHealth>();
+        projectileParticle = projectile.GetComponentInChildren<ParticleSystem>();
         // projectileTransform.Rotate(Vector3.zero);
     }
 
@@ -109,4 +110,8 @@ public class PlayerAttack : MonoBehaviour
         
     //     return 0;
     // }
+
+    private void OnDisable() {
+        projectileParticle.Stop(); 
+    }
 }

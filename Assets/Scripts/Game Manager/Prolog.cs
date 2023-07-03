@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Prolog : MonoBehaviour
 {
     [SerializeField] private GameObject[] dialogUI;
-    [SerializeField] private GameObject maskImage;
     [SerializeField] private GameObject[] dh;
 
     // Start is called before the first frame update
@@ -16,7 +15,6 @@ public class Prolog : MonoBehaviour
         {
             d.SetActive(false);
         }
-        maskImage.SetActive(false);
         StartCoroutine(Prologue());
     }
 
@@ -35,10 +33,15 @@ public class Prolog : MonoBehaviour
 
     private IEnumerator ShowMask() {
         dialogUI[1].SetActive(true);
-        maskImage.SetActive(true);
         yield return new WaitUntil(() => !dh[1].activeInHierarchy);
         dialogUI[1].SetActive(false);
-        maskImage.SetActive(false);
-        SceneManager.LoadScene(1);
+        StartCoroutine(HideMask());
     }   
+
+    private IEnumerator HideMask() {
+        dialogUI[2].SetActive(true);
+        yield return new WaitUntil(() => !dh[2].activeInHierarchy);
+        dialogUI[2].SetActive(false);
+        SceneManager.LoadScene(1);
+    }
 }

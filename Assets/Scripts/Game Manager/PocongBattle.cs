@@ -20,6 +20,7 @@ public class PocongBattle : MonoBehaviour
     [SerializeField] private GameObject dh;
     [SerializeField] private GameObject dh1;
     [SerializeField] private GameObject dh2;
+    [SerializeField] private GameObject hiddenWall;
 
     private bool pocongToPosition = false;
 
@@ -27,12 +28,11 @@ public class PocongBattle : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        Vector3 temp = player.transform.position;
         pocong.SetActive(false);
         pocongPlaceholder.SetActive(false);
         playerMovement.enabled = false;
         playerAttack.enabled = false;
-        StartCoroutine(MovementTutorial(temp));
+        StartCoroutine(MovementTutorial());
     }
 
     private void ShowDialogUI(GameObject dialogUI, bool isShow) {
@@ -50,15 +50,14 @@ public class PocongBattle : MonoBehaviour
         }
     }
 
-    private IEnumerator MovementTutorial(Vector3 temp) {
+    private IEnumerator MovementTutorial() {
         // Debug.Log("Gunakan arah panah untuk bergerak");
         ShowDialogUI(tutorialUI, true);
         yield return new WaitUntil(() => !dh1.activeInHierarchy);
         tutorialUI.SetActive(false);
         playerMovement.enabled = true;
         playerAttack.enabled = true;
-        yield return new WaitUntil(() => Vector3.Distance(player.transform.position, temp) > .1f);
-        yield return new WaitForSeconds(3);
+        yield return new WaitUntil(() => Vector3.Distance(player.transform.position, hiddenWall.transform.position) < 5f);
         playerMovement.enabled = false;
         playerAttack.enabled = false;
         StartCoroutine(BattleEntrance());
