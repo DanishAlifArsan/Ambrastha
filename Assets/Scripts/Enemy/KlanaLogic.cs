@@ -7,7 +7,6 @@ public class KlanaLogic : MonoBehaviour
 {
     [SerializeField] private float enemySpeed;
     [SerializeField] private GameObject[] objectProjectiles;
-    [SerializeField] private ParticleSystem[] particleProjectiles;
     [SerializeField] private GameObject[] waypoints;
     [SerializeField] private float skillDuration;
     [SerializeField] private Text stageNumber, stageName;
@@ -30,10 +29,6 @@ public class KlanaLogic : MonoBehaviour
         foreach (var p in objectProjectiles)
         {
             p.SetActive(false);
-        }
-        foreach (var p in particleProjectiles)
-        {
-            p.Stop();
         }
         StartCoroutine(Entrance());
     }
@@ -95,10 +90,10 @@ public class KlanaLogic : MonoBehaviour
         if (isBatarangin1)
         {
             objectProjectiles[3].SetActive(true);
-            objectProjectiles[3].transform.position = Vector3.MoveTowards(objectProjectiles[3].transform.position, destPosition[0], Time.deltaTime * 10);           
+            objectProjectiles[3].transform.position = Vector3.MoveTowards(objectProjectiles[3].transform.position, destPosition[0], Time.deltaTime * 5);           
             if (objectProjectiles[4].activeInHierarchy)
             {
-                objectProjectiles[4].transform.position = Vector3.MoveTowards(objectProjectiles[4].transform.position, destPosition[1], Time.deltaTime * 10);    
+                objectProjectiles[4].transform.position = Vector3.MoveTowards(objectProjectiles[4].transform.position, destPosition[1], Time.deltaTime * 5);    
             }
 
             if (Vector2.Distance(objectProjectiles[3].transform.position,currentPosition[0]) > 2)
@@ -192,7 +187,7 @@ public class KlanaLogic : MonoBehaviour
     private void StageChange() {
         if (isChange)
         {
-            if (GetComponent<PlayerHealth>().currentHealth <= 1)
+            if (GetComponent<PlayerHealth>().currentHealth <= 0)
             {
                 this.isChange = false;
                 phase++;
@@ -200,10 +195,6 @@ public class KlanaLogic : MonoBehaviour
                 foreach (GameObject g in objectProjectiles)
                 {
                     g.SetActive(false);
-                }
-                foreach (ParticleSystem p in particleProjectiles)
-                {
-                    p.Stop();
                 }
                 switch (phase)
                 {
@@ -295,25 +286,14 @@ public class KlanaLogic : MonoBehaviour
         objectProjectiles[6].transform.position =  currentPosition[3];
         StartCoroutine(Batarangin1());
     }
-    // private IEnumerator LaserShoot() {
-    //     for (int i = 0; i < objectProjectiles[3].transform.childCount; i++)
-    //     {
-    //         objectProjectiles[3].transform.GetChild(i).gameObject.SetActive(true);
-    //         objectProjectiles[4].transform.GetChild(i).gameObject.SetActive(true);
-    //         objectProjectiles[5].transform.GetChild(i).gameObject.SetActive(true);
-    //     }
-    //     yield return new WaitForSeconds(skillDuration);
-    //     StartCoroutine(StopLaser());
-    // }
 
-    // private IEnumerator StopLaser() {   
-    //     for (int i = 0; i < objectProjectiles[3].transform.childCount; i++)
-    //     {
-    //         objectProjectiles[3].transform.GetChild(i).gameObject.SetActive(false);
-    //         objectProjectiles[4].transform.GetChild(i).gameObject.SetActive(false);
-    //         objectProjectiles[5].transform.GetChild(i).gameObject.SetActive(false);
-    //     }
-    //     yield return new WaitForSeconds(2);
-    //     StartCoroutine(LaserShoot());
-    // }
+    private void OnDisable() {
+        foreach (var p in objectProjectiles)
+        {
+            if (p.activeInHierarchy)
+            {
+               p.SetActive(false); 
+            }
+        }
+    }
 }

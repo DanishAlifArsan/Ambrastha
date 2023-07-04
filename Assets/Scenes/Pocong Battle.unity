@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &12896406
 Transform:
   m_ObjectHideFlags: 0
@@ -12163,6 +12163,7 @@ MonoBehaviour:
   avatar: {fileID: 0}
   hurtAvatar: {fileID: 0}
   dead: 0
+  respawnCounter: 1
 --- !u!114 &882909531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24526,7 +24527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1574709781
 Transform:
   m_ObjectHideFlags: 0
@@ -30015,7 +30016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1675491329
 Transform:
   m_ObjectHideFlags: 0
@@ -47724,6 +47725,7 @@ MonoBehaviour:
   avatar: {fileID: 3990141706205324764}
   hurtAvatar: {fileID: 21300000, guid: d9c935a24f8a4694ea53f5e23570a1c8, type: 3}
   dead: 0
+  respawnCounter: 0
 --- !u!224 &2378159332944083963
 RectTransform:
   m_ObjectHideFlags: 0

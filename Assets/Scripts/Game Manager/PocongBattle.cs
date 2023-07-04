@@ -58,6 +58,7 @@ public class PocongBattle : MonoBehaviour
         playerMovement.enabled = true;
         playerAttack.enabled = true;
         yield return new WaitUntil(() => Vector3.Distance(player.transform.position, hiddenWall.transform.position) < 5f);
+        yield return new WaitUntil(() => player.GetComponent<Rigidbody2D>().velocity == Vector2.zero);
         playerMovement.enabled = false;
         playerAttack.enabled = false;
         StartCoroutine(BattleEntrance());
@@ -89,7 +90,7 @@ public class PocongBattle : MonoBehaviour
             pocongPlaceholder.transform.position = Vector3.MoveTowards(pocong.transform.position, pocongPlaceholder.transform.position, Time.deltaTime * 10);  
         }
 
-        if(pocong.GetComponent<PlayerHealth>().dead) {
+        if(pocong.GetComponent<PlayerHealth>().dead && pocong.GetComponent<PlayerHealth>().respawnCounter <= 0) {
             StartCoroutine(BattleEnd());
             
         }

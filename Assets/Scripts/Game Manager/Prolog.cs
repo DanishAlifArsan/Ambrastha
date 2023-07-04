@@ -15,13 +15,20 @@ public class Prolog : MonoBehaviour
         {
             d.SetActive(false);
         }
-        StartCoroutine(Prologue());
+        StartCoroutine(BlackScreen());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private IEnumerator BlackScreen() {
+        dialogUI[3].SetActive(true);
+        yield return new WaitUntil(() => !dh[3].activeInHierarchy);
+        dialogUI[3].SetActive(false);
+        StartCoroutine(Prologue());
     }
 
     private IEnumerator Prologue() {    

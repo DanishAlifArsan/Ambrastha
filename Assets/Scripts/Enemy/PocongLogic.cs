@@ -168,7 +168,7 @@ public class PocongLogic : MonoBehaviour
     private void StageChange(bool isChange) {
         if (isChange)
         {
-            if (GetComponent<PlayerHealth>().currentHealth <= 1)
+            if (GetComponent<PlayerHealth>().currentHealth <= 0)
             {
                 this.isChange = false;
                 GetComponent<PlayerHealth>().Respawn();

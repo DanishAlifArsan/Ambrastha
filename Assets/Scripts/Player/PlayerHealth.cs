@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth {get; private set;}
     // private Animator anim;
     [HideInInspector] public bool dead;
+
+    public float respawnCounter = 0;
     // [HideInInspector] public float damageMultiplier = 10;
 
     // [Header ("IFrame")]
@@ -67,7 +69,7 @@ public class PlayerHealth : MonoBehaviour
     private void Update() {
         currentHealthBar.fillAmount = currentHealth / startingHealth;
 
-        if (dead)
+        if (dead && respawnCounter <= 0)
         {
             Deactivate();
         }
@@ -109,6 +111,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Respawn() {
         dead = false;
+        respawnCounter--;
 
         addHealth(startingHealth);
 
