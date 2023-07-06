@@ -49,6 +49,7 @@ public class Prolog : MonoBehaviour
         dialogUI[2].SetActive(true);
         yield return new WaitUntil(() => !dh[2].activeInHierarchy);
         dialogUI[2].SetActive(false);
-        SceneManager.LoadScene(1);
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(2);
     }
 }

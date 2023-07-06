@@ -225,7 +225,9 @@ public class KlanaLogic : MonoBehaviour
         stageName.text = "[SAMANDIMAN]";
         isSecondPhase = true;
         isChange = true;
+        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         yield return new WaitUntil(() => Vector2.Distance(transform.position, new Vector3(waypoints[0].transform.position.x, waypoints[3].transform.position.y)) < .1f);
+        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
         objectProjectiles[2].SetActive(true);
         isSecondPhase = false;
         isBulletMoving = true;

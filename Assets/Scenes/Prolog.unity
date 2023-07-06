@@ -880,7 +880,7 @@ MonoBehaviour:
   delay: 0.01
   speakerName: Sada
   speakerBox: {fileID: 5099503865761256482}
-  characterSprite: {fileID: 21300000, guid: a9cf79d3c72c00e47a8bf9d923ce4506, type: 3}
+  characterSprite: {fileID: 21300000, guid: c051e795ff81f9a4c8ab82c11d72b227, type: 3}
   imageHolder: {fileID: 5099503864630534180}
 --- !u!114 &180455911
 MonoBehaviour:

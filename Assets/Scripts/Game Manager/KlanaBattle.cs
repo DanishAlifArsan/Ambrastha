@@ -62,6 +62,6 @@ public class KlanaBattle : MonoBehaviour
         // yield return new WaitUntil(() => !dh2.activeInHierarchy);
         // ShowDialogUI(endDialogue, false);
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(4);
     }
 }
