@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
 
     [Header ("pause")]
     [SerializeField] private GameObject pauseScreen;
-    [SerializeField] private bool isInGame = false;
+    public bool isInGame = false;
     // [SerializeField] private AudioClip pauseSound;
     // Start is called before the first frame update
     private void Start()
@@ -79,6 +79,7 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
     public void TryAgain() {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void MainMenu() {

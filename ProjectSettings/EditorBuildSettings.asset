@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Klana Battle.unity
     guid: 6b4f1300ddea614468ccccaf2c802b7e
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 7eeee462a8685ec47a24d0728949a045
   m_configObjects: {}

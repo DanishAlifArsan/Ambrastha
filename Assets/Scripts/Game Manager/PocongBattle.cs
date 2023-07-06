@@ -21,6 +21,7 @@ public class PocongBattle : MonoBehaviour
     [SerializeField] private GameObject dh1;
     [SerializeField] private GameObject dh2;
     [SerializeField] private GameObject hiddenWall;
+    [SerializeField] private UIManager uIManager;
 
     private bool pocongToPosition = false;
 
@@ -28,6 +29,7 @@ public class PocongBattle : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        uIManager.isInGame = false;
         pocong.SetActive(false);
         pocongPlaceholder.SetActive(false);
         playerMovement.enabled = false;
@@ -38,11 +40,13 @@ public class PocongBattle : MonoBehaviour
     private void ShowDialogUI(GameObject dialogUI, bool isShow) {
         if (isShow)
         {
+            uIManager.isInGame = false;
             playerMovement.enabled = false;
             playerAttack.enabled = false;
             dialogUI.SetActive(true);
             battleUI.SetActive(false);
         } else {
+            uIManager.isInGame = true;
             playerMovement.enabled = true;
             playerAttack.enabled = true;
             battleUI.SetActive(true);
@@ -57,10 +61,12 @@ public class PocongBattle : MonoBehaviour
         tutorialUI.SetActive(false);
         playerMovement.enabled = true;
         playerAttack.enabled = true;
+        uIManager.isInGame = true;
         yield return new WaitUntil(() => Vector3.Distance(player.transform.position, hiddenWall.transform.position) < 5f);
         yield return new WaitUntil(() => player.GetComponent<Rigidbody2D>().velocity == Vector2.zero);
         playerMovement.enabled = false;
         playerAttack.enabled = false;
+        uIManager.isInGame = false;
         StartCoroutine(BattleEntrance());
     }
 

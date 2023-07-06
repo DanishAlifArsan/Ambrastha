@@ -9,15 +9,14 @@ public class KlanaBattle : MonoBehaviour
 {
     [SerializeField] private GameObject battleUI;
     [SerializeField] private GameObject dialogUI;
-    // [SerializeField] private GameObject endDialogue;
+    [SerializeField] private GameObject endDialogue;
     [SerializeField] private GameObject klana;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerAttack playerAttack;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject dh;
-    // [SerializeField] private GameObject dh2;
-
-
+    [SerializeField] private GameObject dh2;
+    [SerializeField] private UIManager uIManager;
 
     // Start is called before the first frame update
     private void Start()
@@ -29,11 +28,13 @@ public class KlanaBattle : MonoBehaviour
     private void ShowDialogUI(GameObject dialogUI, bool isShow) {
         if (isShow)
         {
+            uIManager.isInGame = false;
             playerMovement.enabled = false;
             playerAttack.enabled = false;
             dialogUI.SetActive(true);
             battleUI.SetActive(false);
         } else {
+            uIManager.isInGame = true;
             playerMovement.enabled = true;
             playerAttack.enabled = true;
             battleUI.SetActive(true);
@@ -58,9 +59,9 @@ public class KlanaBattle : MonoBehaviour
     }
 
     private IEnumerator BattleEnd() {
-        // ShowDialogUI(endDialogue,true);
-        // yield return new WaitUntil(() => !dh2.activeInHierarchy);
-        // ShowDialogUI(endDialogue, false);
+        ShowDialogUI(endDialogue,true);
+        yield return new WaitUntil(() => !dh2.activeInHierarchy);
+        ShowDialogUI(endDialogue, false);
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(4);
     }
