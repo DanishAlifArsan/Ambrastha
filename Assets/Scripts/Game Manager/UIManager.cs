@@ -44,11 +44,21 @@ public class UIManager : MonoBehaviour
             {
                 gameOver();
             }  
+
+            if (pauseScreen.activeInHierarchy)
+            {
+                Time.timeScale = 0;
+            } else if (gameOverScreen.activeInHierarchy) {
+                Time.timeScale = 0;
+            } else {
+                Time.timeScale = 1;
+            }
+        } else {
+            Time.timeScale = 1;
         }
     }
 
     private void gameOver() {
-        Time.timeScale = 0;
         gameOverScreen.SetActive(true);
         // SoundManager.instance.playSound(gameOverSound);
     }
@@ -67,10 +77,8 @@ public class UIManager : MonoBehaviour
         
 
         if(status) {
-            Time.timeScale = 0;
             enablePlayer(false);
         } else {
-            Time.timeScale = 1;
             enablePlayer(true);
         }
     }
@@ -78,8 +86,10 @@ public class UIManager : MonoBehaviour
     public void StartGame() {
         SceneManager.LoadScene(1);
     }
+    public void Continue() {
+        pauseGame(false);
+    }
     public void TryAgain() {
-        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void MainMenu() {
