@@ -292,9 +292,12 @@ public class KlanaLogic : MonoBehaviour
     private void OnDisable() {
         foreach (var p in objectProjectiles)
         {
-            if (p.activeInHierarchy)
+            if (p!= null)
             {
-               p.SetActive(false); 
+                if (p.activeInHierarchy)
+                {
+                    p.SetActive(false); 
+                }
             }
         }
     }

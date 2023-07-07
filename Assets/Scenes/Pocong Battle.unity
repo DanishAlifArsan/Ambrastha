@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &12896406
 Transform:
   m_ObjectHideFlags: 0
@@ -12170,7 +12170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f31d3972843bef4e95dc52252764ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 5
+  startingHealth: 50
   currentHealthBar: {fileID: 8323854971028665859}
   avatar: {fileID: 0}
   hurtAvatar: {fileID: 0}
@@ -24648,7 +24648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1574709781
 Transform:
   m_ObjectHideFlags: 0
@@ -30137,7 +30137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1675491329
 Transform:
   m_ObjectHideFlags: 0
@@ -48341,7 +48341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.6169996, b: 1, a: 1}
+  m_Color: {r: 0.1254902, g: 0.1254902, b: 0.1254902, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

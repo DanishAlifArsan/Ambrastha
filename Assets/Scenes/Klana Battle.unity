@@ -37398,7 +37398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f31d3972843bef4e95dc52252764ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 5
+  startingHealth: 50
   currentHealthBar: {fileID: 1052939033}
   avatar: {fileID: 0}
   hurtAvatar: {fileID: 0}
