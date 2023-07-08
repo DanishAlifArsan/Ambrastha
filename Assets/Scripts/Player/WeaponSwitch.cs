@@ -6,7 +6,9 @@ public class WeaponSwitch : MonoBehaviour
 {
     private int currentWeapon;
     [SerializeField] private GameObject[] weaponGameObject;
+    [SerializeField] private Sprite[] maskSprite;
     [SerializeField] private Transform player;
+    [SerializeField] private SpriteRenderer mask;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -41,9 +43,10 @@ public class WeaponSwitch : MonoBehaviour
         {
             transform.GetChild(i).gameObject.SetActive(i==index);
             weaponGameObject[i].SetActive(i==index);
-            weaponGameObject[i].GetComponent<ParticleSystem>().Stop();          
+            weaponGameObject[i].GetComponent<ParticleSystem>().Stop();     
             ResetParticlePosition(i); 
         }   
+        mask.sprite = maskSprite[index];     
     }
 
     public void SwitchWeapon(int change) {

@@ -129,7 +129,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponGameObject: []
+  maskSprite:
+  - {fileID: 21300000, guid: 51c2f5cae785fe44ea5b41a2e9b56f27, type: 3}
+  - {fileID: 21300000, guid: 103959e90aee056408b74a613945fbd5, type: 3}
+  - {fileID: 21300000, guid: 29e58dd2593847445852b9b7a739cdf5, type: 3}
   player: {fileID: 0}
+  mask: {fileID: 0}
 --- !u!1 &1318118457740394832
 GameObject:
   m_ObjectHideFlags: 0
