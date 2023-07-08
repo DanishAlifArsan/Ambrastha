@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashCooldown;
     [SerializeField] private TrailRenderer trailRenderer;
     public Rigidbody2D body;
-    // private Animator anim;
+    private Animator anim;
     private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask groundLayer;
 
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
-        // anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
         currentStamina = startingStamina;
         trailRenderer.emitting = false;
@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
             jumpCounter = extraJumps;
         }       
 
-        // anim.SetBool("run",horizontalInput != 0);
+        anim.SetBool("run",horizontalInput != 0);
         // anim.SetBool("ground", isGrounded());
 
         if(Input.GetButtonDown("Jump")) {
@@ -172,7 +172,9 @@ public class PlayerMovement : MonoBehaviour
         body.gravityScale = 0;
         body.velocity = new Vector2(transform.localScale.x * dashPower, 0);
         trailRenderer.emitting = true;
+        anim.SetBool("dashing",true);
         yield return new WaitForSeconds(dashTime);
+        anim.SetBool("dashing",false);
         trailRenderer.emitting = false;
         hitbox.enabled = true;
         body.gravityScale = playerGravity;

@@ -17,6 +17,9 @@ public class KlanaBattle : MonoBehaviour
     [SerializeField] private GameObject dh;
     [SerializeField] private GameObject dh2;
     [SerializeField] private UIManager uIManager;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip dialogueMusic;
+    [SerializeField] private AudioClip battleMusic;
 
     // Start is called before the first frame update
     private void Start()
@@ -28,18 +31,23 @@ public class KlanaBattle : MonoBehaviour
     private void ShowDialogUI(GameObject dialogUI, bool isShow) {
         if (isShow)
         {
+            audioSource.clip = dialogueMusic;
+            audioSource.Play();
             uIManager.isInGame = false;
             playerMovement.enabled = false;
             playerAttack.enabled = false;
             dialogUI.SetActive(true);
             battleUI.SetActive(false);
         } else {
+            audioSource.clip = battleMusic;
+            audioSource.Play();
             uIManager.isInGame = true;
             playerMovement.enabled = true;
             playerAttack.enabled = true;
             battleUI.SetActive(true);
             dialogUI.SetActive(false);
         }
+        
     }
 
     private IEnumerator BattleEntrance()
@@ -52,7 +60,9 @@ public class KlanaBattle : MonoBehaviour
 
     // Update is called once per frame
     private void Update()
-    {   
+    {
+        // audioSource.Play();
+
         if(klana.GetComponent<PlayerHealth>().dead && klana.GetComponent<PlayerHealth>().respawnCounter <= 0) {
             StartCoroutine(BattleEnd());
         }
