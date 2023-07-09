@@ -47793,7 +47793,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.23549092, b: 0.0039215684, a: 1}
+  m_Color: {r: 1, g: 0.23549092, b: 0.0039215684, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -47871,7 +47871,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponGameObject:
   - {fileID: 34906900586122318}
+  maskSprite: []
   player: {fileID: 34906900555179783}
+  mask: {fileID: 0}
 --- !u!1 &1109606240734262255
 GameObject:
   m_ObjectHideFlags: 0

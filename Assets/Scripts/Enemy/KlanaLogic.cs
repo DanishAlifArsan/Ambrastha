@@ -132,14 +132,14 @@ public class KlanaLogic : MonoBehaviour
     private IEnumerator Entrance() {
         objectProjectiles[0].transform.position = transform.position;
         isEntrance = true;
-        yield return new WaitUntil(() => Vector2.Distance(transform.position, waypoints[2].transform.position) > 5f);
+        yield return new WaitUntil(() => Vector2.Distance(transform.position, waypoints[2].transform.position) > 10f);
         objectProjectiles[1].SetActive(false);
             yield return new WaitUntil(() => Vector2.Distance(transform.position, waypoints[0].transform.position) < .1f);
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
             yield return new WaitForSeconds(1);
             objectProjectiles[0].SetActive(true);
             isBulletMoving = true;
-            yield return new WaitUntil(() => Vector2.Distance(transform.position, objectProjectiles[0].transform.position) > 20f);
+            yield return new WaitUntil(() => Vector2.Distance(transform.position, objectProjectiles[0].transform.position) > 30f);
             isEntrance = false;
             isBulletMoving = false;
             objectProjectiles[0].SetActive(false);
@@ -150,7 +150,7 @@ public class KlanaLogic : MonoBehaviour
     private IEnumerator Entrance2() {
         objectProjectiles[0].transform.position = transform.position;
         isEntrance2 = true;
-        yield return new WaitUntil(() => Vector2.Distance(transform.position, waypoints[2].transform.position) < 5f);
+        yield return new WaitUntil(() => Vector2.Distance(transform.position, waypoints[2].transform.position) < 10f);
         objectProjectiles[1].SetActive(true);
         yield return new WaitForSeconds(1);
         isEntrance2 = false;
@@ -160,14 +160,14 @@ public class KlanaLogic : MonoBehaviour
     private IEnumerator Entrance3() {
         objectProjectiles[0].transform.position = transform.position;
         isEntrance3 = true;
-        yield return new WaitUntil(() => Vector2.Distance(transform.position, waypoints[2].transform.position) > 5f);
+        yield return new WaitUntil(() => Vector2.Distance(transform.position, waypoints[2].transform.position) > 10f);
         objectProjectiles[1].SetActive(false);
         yield return new WaitUntil(() => Vector2.Distance(transform.position, waypoints[1].transform.position) < .1f);
         transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         yield return new WaitForSeconds(1);
         objectProjectiles[0].SetActive(true);
         isBulletMoving = true;  
-        yield return new WaitUntil(() => Vector2.Distance(transform.position, objectProjectiles[0].transform.position) > 20f);
+        yield return new WaitUntil(() => Vector2.Distance(transform.position, objectProjectiles[0].transform.position) > 30f);
         isEntrance3 = false;
         isBulletMoving = false;
         objectProjectiles[0].SetActive(false);

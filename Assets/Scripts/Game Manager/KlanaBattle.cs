@@ -14,6 +14,7 @@ public class KlanaBattle : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerAttack playerAttack;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject dewiSekartaji;
     [SerializeField] private GameObject dh;
     [SerializeField] private GameObject dh2;
     [SerializeField] private UIManager uIManager;
@@ -65,6 +66,19 @@ public class KlanaBattle : MonoBehaviour
 
         if(klana.GetComponent<PlayerHealth>().dead && klana.GetComponent<PlayerHealth>().respawnCounter <= 0) {
             StartCoroutine(BattleEnd());
+        }
+        
+        for (int i = 0; i < player.transform.childCount; i++)
+            {
+               if (player.transform.GetChild(i).GetComponent<PlayerHealth>() != null)
+               {
+                if (dewiSekartaji.activeInHierarchy)
+                {
+                    player.GetComponentInChildren<PlayerHealth>().damageReduction = true;
+                } else {
+                    player.GetComponentInChildren<PlayerHealth>().damageReduction = false;
+                }
+            }
         }
     }
 

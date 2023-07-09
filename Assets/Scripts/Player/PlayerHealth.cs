@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth {get; private set;}
     // private Animator anim;
     [HideInInspector] public bool dead;
+    [HideInInspector] public bool damageReduction = false;
 
     public float respawnCounter = 0;
     // [HideInInspector] public float damageMultiplier = 10;
@@ -39,6 +40,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float _damage) {
         // _damage /= damageMultiplier;
+        if (damageReduction)
+        {
+            _damage = Mathf.Round(_damage/2);
+        }
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
         
         if (currentHealth > 0) {
@@ -73,8 +78,6 @@ public class PlayerHealth : MonoBehaviour
         {
             Deactivate();
         }
-
-        
     }
 
     public void addHealth(float _value) {
