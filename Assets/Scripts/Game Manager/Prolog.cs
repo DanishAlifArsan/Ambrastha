@@ -8,6 +8,7 @@ public class Prolog : MonoBehaviour
     [SerializeField] private GameObject[] dialogUI;
     [SerializeField] private GameObject[] dh;
     [SerializeField] private AudioSource sfx;
+    [SerializeField] private GameObject[] background;
 
     // Start is called before the first frame update
     private void Start()
@@ -16,13 +17,11 @@ public class Prolog : MonoBehaviour
         {
             d.SetActive(false);
         }
+        foreach (GameObject b in background)
+        {
+            b.SetActive(false);
+        }
         StartCoroutine(BlackScreen());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private IEnumerator BlackScreen() {
@@ -34,9 +33,28 @@ public class Prolog : MonoBehaviour
 
     private IEnumerator Prologue() {    
         dialogUI[0].SetActive(true);
+        background[0].SetActive(true);
         sfx.Play();
         yield return new WaitUntil(() => !dh[0].activeInHierarchy);
         dialogUI[0].SetActive(false);
+        StartCoroutine(ChangeBG());
+    }
+
+    private IEnumerator ChangeBG() {
+        dialogUI[4].SetActive(true);
+        background[0].SetActive(false);
+        background[1].SetActive(true);
+        yield return new WaitUntil(() => !dh[4].activeInHierarchy);
+        dialogUI[4].SetActive(false);
+        StartCoroutine(ReturnBG());
+    }
+
+    private IEnumerator ReturnBG() {
+        dialogUI[5].SetActive(true);
+        background[0].SetActive(true);
+        background[1].SetActive(false);
+        yield return new WaitUntil(() => !dh[5].activeInHierarchy);
+        dialogUI[5].SetActive(false);
         StartCoroutine(ShowMask());
     }
 
