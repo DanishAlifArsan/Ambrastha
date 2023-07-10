@@ -7,6 +7,7 @@ public class Prolog : MonoBehaviour
 {
     [SerializeField] private GameObject[] dialogUI;
     [SerializeField] private GameObject[] dh;
+    [SerializeField] private AudioSource sfx;
 
     // Start is called before the first frame update
     private void Start()
@@ -33,6 +34,7 @@ public class Prolog : MonoBehaviour
 
     private IEnumerator Prologue() {    
         dialogUI[0].SetActive(true);
+        sfx.Play();
         yield return new WaitUntil(() => !dh[0].activeInHierarchy);
         dialogUI[0].SetActive(false);
         StartCoroutine(ShowMask());

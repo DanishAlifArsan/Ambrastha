@@ -36,6 +36,8 @@ public class KlanaLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        objectProjectiles[7].transform.Rotate(new Vector3(0,0,1), -90 * Time.deltaTime);
+         
         StageChange();
         if (isEntrance)
         {
@@ -229,6 +231,7 @@ public class KlanaLogic : MonoBehaviour
         yield return new WaitUntil(() => Vector2.Distance(transform.position, new Vector3(waypoints[0].transform.position.x, waypoints[3].transform.position.y)) < .1f);
         transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
         objectProjectiles[2].SetActive(true);
+        objectProjectiles[7].SetActive(true);
         isSecondPhase = false;
         isBulletMoving = true;
         StartCoroutine(Samandiman1());
@@ -253,10 +256,12 @@ public class KlanaLogic : MonoBehaviour
     }
 
      private IEnumerator ThirdPhase() {
+        objectProjectiles[7].SetActive(false);
         stageNumber.text = "3/3";
         stageName.text = "[BANTARANGIN]";
         isThirdPhase = true;
         yield return new WaitUntil(() => Vector2.Distance(transform.position, waypoints[2].transform.position) < .1f);
+        objectProjectiles[7].SetActive(true);
         isThirdPhase = false;
         StartCoroutine(Batarangin1());
     }

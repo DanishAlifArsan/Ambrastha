@@ -81,6 +81,7 @@ public class PocongLogic : MonoBehaviour
                 objectProjectiles[3].transform.RotateAround(transform.position, new Vector3(0,0,1), -90 * Time.deltaTime);
                 objectProjectiles[4].transform.RotateAround(transform.position, new Vector3(0,0,1), -90 * Time.deltaTime);
                 objectProjectiles[5].transform.RotateAround(transform.position, new Vector3(0,0,1), -90 * Time.deltaTime);
+                objectProjectiles[6].transform.Rotate(new Vector3(0,0,1), -90 * Time.deltaTime);
             }
         }
     }
@@ -199,6 +200,7 @@ public class PocongLogic : MonoBehaviour
         objectProjectiles[3].SetActive(true);
         objectProjectiles[4].SetActive(true);
         objectProjectiles[5].SetActive(true);
+        objectProjectiles[6].SetActive(true);
         isBulletMoving = true;
         StartCoroutine(StopLaser());
         // yield return new WaitForSeconds(skillDuration);

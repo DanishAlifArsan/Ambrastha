@@ -45,8 +45,11 @@ public class WeaponSwitch : MonoBehaviour
             weaponGameObject[i].SetActive(i==index);
             weaponGameObject[i].GetComponent<ParticleSystem>().Stop();     
             ResetParticlePosition(i); 
-        }   
-        mask.sprite = maskSprite[index];     
+        } 
+        if (mask != null)
+        {
+            mask.sprite = maskSprite[index];    
+        }  
     }
 
     public void SwitchWeapon(int change) {

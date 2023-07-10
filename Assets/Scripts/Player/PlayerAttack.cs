@@ -10,7 +10,7 @@ public class PlayerAttack : MonoBehaviour
     // [SerializeField] private AudioClip fireballSound;
 
     [SerializeField] private Transform enemy;
-
+    private Animator anim;
     private PlayerHealth playerHealth;
 
     private float cooldownTimer = Mathf.Infinity;
@@ -22,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Awake()
     {
-        // anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();  
         // projectileParticle = projectile.GetComponentInChildren<ParticleSystem>(); 
         // projectileParticle.Stop();
@@ -41,10 +41,12 @@ public class PlayerAttack : MonoBehaviour
         // projectileTransform.LookAt(enemy);
         if(Input.GetButtonDown("Fire1") && cooldownTimer > attackCooldown && playerMovement.canAttack()) {    
             projectileParticle.Play();
+              anim.SetBool("attack", true);
             // projectileTransform.Rotate(Vector3.zero);
             Attack();
         } else if (Input.GetButtonUp("Fire1") || !playerMovement.canAttack()) {
             // projectileTransform.Rotate(Vector3.zero);
+            anim.SetBool("attack", false);
            projectileParticle.Stop();    
            ResetAttackDirection();   
             // playerMovement.body.bodyType = RigidbodyType2D.Dynamic;
@@ -58,7 +60,6 @@ public class PlayerAttack : MonoBehaviour
     private void Attack() {
         // SoundManager.instance.playSound(fireballSound);
         // cooldownTimer = 0;
-        // anim.SetTrigger("attack");
 
         // fireballs[findFireball()].transform.position = firePoint.position;
         // fireballs[findFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));

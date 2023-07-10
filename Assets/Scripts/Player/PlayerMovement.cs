@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         }       
 
         anim.SetBool("run",horizontalInput != 0);
-        // anim.SetBool("ground", isGrounded());
+        anim.SetBool("jump",!isGrounded());
 
         if(Input.GetButtonDown("Jump")) {
             Jump();
@@ -155,6 +155,7 @@ public class PlayerMovement : MonoBehaviour
 
         
         if (isGrounded()) {
+            
             body.velocity = new Vector2(body.velocity.x,jumpPower);
         } else {
             if (jumpCounter > 0) {

@@ -154,7 +154,7 @@ MonoBehaviour:
   speed: 5
   jumpPower: 5.5
   dashTime: 0.25
-  dashPower: 5
+  dashPower: 8
   dashCost: 2
   dashCooldown: 0.5
   trailRenderer: {fileID: 7120455350336528339}
@@ -10032,6 +10032,7 @@ MonoBehaviour:
   avatar: {fileID: 0}
   hurtAvatar: {fileID: 0}
   dead: 0
+  damageReduction: 0
   respawnCounter: 0
 --- !u!1 &1109606240496531868
 GameObject:
