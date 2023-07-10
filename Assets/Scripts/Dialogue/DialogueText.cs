@@ -13,7 +13,7 @@ public class DialogueText : DialogueBaseClass
     [SerializeField] private Sprite characterSprite;
     [SerializeField] private Image imageHolder;
     private TextMeshProUGUI textHolder;
-    // Start is called before the first frame update
+
     private void Awake()
     {
         textHolder = GetComponent<TextMeshProUGUI>();
@@ -29,8 +29,7 @@ public class DialogueText : DialogueBaseClass
         StartCoroutine(WriteText(input,textHolder,delay));
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
       if (isFinished)
       {

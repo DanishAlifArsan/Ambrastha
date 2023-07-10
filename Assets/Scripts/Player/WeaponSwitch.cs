@@ -9,13 +9,12 @@ public class WeaponSwitch : MonoBehaviour
     [SerializeField] private Sprite[] maskSprite;
     [SerializeField] private Transform player;
     [SerializeField] private SpriteRenderer mask;
-    // Start is called before the first frame update
+
     private void Awake()
     {
         SwitchWeapon(0);
     }
 
-    // Update is called once per frame
     private void Update()
     {
         if (Input.GetButtonDown("Fire2"))

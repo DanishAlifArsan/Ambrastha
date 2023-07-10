@@ -9,13 +9,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private WeaponSwitch weaponSwitch;
     [Header ("game over")]
     [SerializeField] private GameObject gameOverScreen;
-    // [SerializeField] private AudioClip gameOverSound;
 
     [Header ("pause")]
     [SerializeField] private GameObject pauseScreen;
     public bool isInGame = false;
-    // [SerializeField] private AudioClip pauseSound;
-    // Start is called before the first frame update
+
     private void Start()
     {
         if (isInGame)
@@ -60,7 +58,7 @@ public class UIManager : MonoBehaviour
 
     private void gameOver() {
         gameOverScreen.SetActive(true);
-        // SoundManager.instance.playSound(gameOverSound);
+
     }
 
     private void enablePlayer(bool status) {

@@ -7,14 +7,15 @@ public class Ending : MonoBehaviour
 {
     [SerializeField] GameObject[] dialogueUI;
     [SerializeField] GameObject[] dh;
+    
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         dialogueUI[0].SetActive(true);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (dialogueUI[0].activeInHierarchy)
         {

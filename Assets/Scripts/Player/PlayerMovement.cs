@@ -16,35 +16,19 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask groundLayer;
-
     [SerializeField] private BoxCollider2D hitbox;
-
     [SerializeField] private float startingStamina;
     [SerializeField] private float staminaRegen;
-    // [SerializeField] private Image totalHealthBar; 
     [SerializeField] private Image currentStaminaBar; 
     public float currentStamina {get; private set;}
-    // [SerializeField] private LayerMask wallLayer;
-
-    // [SerializeField] private AudioClip jumpsound;
-    
-    // private float wallJumpCooldown;
     private float horizontalInput;
-
-    // [SerializeField] private float coyoteTime;
-    // private float coyoteCounter;
-
-    // [SerializeField] private float wallJumpX;
-    // [SerializeField] private float wallJumpY;
-    
-
     [SerializeField] private float extraJumps;
     private float jumpCounter;
 
     private bool isDashing = false;
     private bool canDash = true;
 
-    void Awake()
+    private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -54,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (isDashing)
         {
@@ -106,56 +90,14 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonUp("Jump") && body.velocity.y > 0) {
             body.velocity = new Vector2(body.velocity.x, body.velocity.y / 2);
         }
-
-        // if(onWall()) {
-        //     body.gravityScale = 0;
-        //     body.velocity = Vector2.zero;
-        // } else {
-        //     body.gravityScale = 2.5f;
-        //     body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-
-        //     if(isGrounded()) {
-        //         coyoteCounter = coyoteTime;
-        //         jumpCounter = extraJumps;
-        //     } else {
-        //         coyoteCounter -= Time.deltaTime;
-        //     }
-        // }
     }
 
-    private void Jump() {
-        // if(coyoteCounter <= 0 && !onWall() && jumpCounter <= 0) {
-        //     return;
-        // }
-
-        //  SoundManager.instance.playSound(jumpsound);
-
-        // if (onWall()) {
-        //     wallJump();
-        //  } else {
-        //     if (isGrounded()) {
-        //         body.velocity = new Vector2(body.velocity.x,jumpPower);
-        //     } else {
-        //         if (coyoteCounter > 0) {
-        //             body.velocity = new Vector2(body.velocity.x,jumpPower);
-        //         }
-        //         else {
-        //             if (jumpCounter > 0) {
-        //                 body.velocity = new Vector2(body.velocity.x,jumpPower);
-        //                 jumpCounter--;
-        //             }
-        //         }
-        //     }
-        //     coyoteCounter = 0;
-        //  }
-         
+    private void Jump() {    
         if(jumpCounter <= 0) {
             return;
         }
 
-        
         if (isGrounded()) {
-            
             body.velocity = new Vector2(body.velocity.x,jumpPower);
         } else {
             if (jumpCounter > 0) {
@@ -180,29 +122,14 @@ public class PlayerMovement : MonoBehaviour
         hitbox.enabled = true;
         body.gravityScale = playerGravity;
         isDashing = false;
-        // yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
 
-    // private void wallJump() {
-    //     body.AddForce(new Vector2(-Mathf.Sign(transform.localScale.x) * wallJumpX, wallJumpY));
-    //     wallJumpCooldown = 0;
-    // }
-
     private bool isGrounded() {
         return Physics2D.BoxCast(boxCollider.bounds.center,boxCollider.bounds.size, 0f, Vector2.down, .1f, groundLayer);
-        // RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center,boxCollider.bounds.size,0,Vector2.down,0.1f,groundLayer);
-        // return raycastHit.collider != null;
-    
     }
-    // private bool onWall() {
-    //     RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center,boxCollider.bounds.size,0,new Vector2(transform.localScale.x,0),0.1f,wallLayer);
-    //     return raycastHit.collider != null;
-    // }
 
-    //gak kepake. hapus aja nanti
     public bool canAttack() {
-        // return horizontalInput == 0 && isGrounded();
         return !isDashing;
     }
     

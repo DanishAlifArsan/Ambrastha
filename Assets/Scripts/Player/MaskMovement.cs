@@ -12,13 +12,12 @@ public class MaskMovement : MonoBehaviour
     private void Update()
     {
         Vector2 followPosition = new Vector2(player.position.x, player.position.y + followRange);
-        //membuat fairy bergerak mengikuti miner
+
         if (Vector2.Distance(transform.position, followPosition) > followRange)
         {
             transform.position = Vector2.MoveTowards(transform.position, followPosition, speed * Time.deltaTime);
         }
 
-        //membuat fairy menghadap ke arah player
         if (player.position.x > transform.position.x)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);

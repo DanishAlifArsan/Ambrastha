@@ -6,40 +6,20 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
-    // [SerializeField] private Image totalHealthBar; 
     [SerializeField] private Image currentHealthBar; 
     [SerializeField] private Image avatar;
     [SerializeField] private Sprite hurtAvatar;
     public float currentHealth {get; private set;}
-    // private Animator anim;
     [HideInInspector] public bool dead;
     [HideInInspector] public bool damageReduction = false;
-
     public float respawnCounter = 0;
-    // [HideInInspector] public float damageMultiplier = 10;
-
-    // [Header ("IFrame")]
-    // [SerializeField] private float iFrameDuration;
-    // [SerializeField] private int numberOfFlash;
-    // private SpriteRenderer spriteRend;
-
-    // [Header ("Components")]
-    // [SerializeField] private Behaviour[] components;
-
-    // [Header ("Death sound")]
-    // [SerializeField] private AudioClip deathSound;
-    // [SerializeField] private AudioClip hurtSound;
     
-    void Start()
+    private void Start()
     {
         currentHealth = startingHealth;
-        // anim = GetComponent<Animator>();
-        // spriteRend = GetComponent<SpriteRenderer>();
-        // totalHealthBar.fillAmount = currentHealth / startingHealth;
     }
 
     public void TakeDamage(float _damage) {
-        // _damage /= damageMultiplier;
         if (damageReduction)
         {
             _damage = Mathf.Round(_damage/2);
@@ -51,22 +31,10 @@ public class PlayerHealth : MonoBehaviour
             {
                 StartCoroutine(Hurt());
             }
-            // anim.SetTrigger("hurt");
-            // StartCoroutine(IFrames());
-            // SoundManager.instance.playSound(hurtSound);
         }
         else {
             if(!dead) {
-                // foreach (Behaviour comp in components)
-                // {
-                //     comp.enabled = false;
-                // }
-
-                // anim.SetBool("ground", true);
-                // anim.SetTrigger("die");
-
                 dead = true;
-                // SoundManager.instance.playSound(deathSound);
             } 
         }
     }
@@ -90,18 +58,6 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         avatar.sprite = temp;
     }
- 
-    // private IEnumerator IFrames() {
-    //     Physics2D.IgnoreLayerCollision(10,11,true);
-    //     for (int i = 0; i < numberOfFlash; i++)
-    //     {
-    //         spriteRend.color = new Color(1,0,0, 0.5f);
-    //         yield return new WaitForSeconds(iFrameDuration / (numberOfFlash * 2));
-    //         spriteRend.color = Color.white;
-    //         yield return new WaitForSeconds(iFrameDuration / (numberOfFlash * 2));
-    //     }
-    //     Physics2D.IgnoreLayerCollision(10,11,false);
-    // }
 
     public void Deactivate() {
         if (transform.parent != null)
@@ -119,13 +75,5 @@ public class PlayerHealth : MonoBehaviour
         addHealth(startingHealth);
 
         gameObject.SetActive(true);
-        // anim.ResetTrigger("die");
-        // anim.Play("Idle");
-        // StartCoroutine(IFrames());
-
-        // foreach (Behaviour comp in components)
-        // {
-        //     comp.enabled = true;
-        // }
     }
 }

@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class DialogueHolder : MonoBehaviour
 {
-    // Start is called before the first frame update
     private void Awake()
     {
         StartCoroutine(dialogueSequence());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private IEnumerator dialogueSequence() {
