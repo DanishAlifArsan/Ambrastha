@@ -9,12 +9,13 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform enemy;
     private Animator anim;
     private PlayerHealth playerHealth;
-    private float cooldownTimer = Mathf.Infinity;
     private PlayerMovement playerMovement;
+    private bool canAttack;
     ParticleSystem projectileParticle;
 
     private void Awake()
     {
+        canAttack = true;
         anim = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();  
         playerHealth = GetComponent<PlayerHealth>();
@@ -27,17 +28,24 @@ public class PlayerAttack : MonoBehaviour
         projectileParticle = projectile.GetComponentInChildren<ParticleSystem>();
         AttackDirection();
         
-        if(Input.GetButtonDown("Fire1") && cooldownTimer > attackCooldown && playerMovement.canAttack()) {    
-            projectileParticle.Play();
-            anim.SetBool("attack", true);
-            cooldownTimer = 0;
-        } else if (Input.GetButtonUp("Fire1") || !playerMovement.canAttack()) {
-        anim.SetBool("attack", false);
-           projectileParticle.Stop();    
-           ResetAttackDirection();   
+        if(Input.GetButtonDown("Fire1") && !playerMovement.isDashing && canAttack) {    
+            
+            StartCoroutine(Attack());
+        } 
+        if (playerMovement.isDashing) {
+            StopCoroutine(Attack());
         }
+    }
 
-        cooldownTimer += Time.deltaTime;
+    private IEnumerator Attack() {
+        canAttack = false;
+        projectileParticle.Play();
+        anim.SetBool("attack", true);
+        yield return new WaitForSeconds(attackCooldown);
+        anim.SetBool("attack", false);
+        projectileParticle.Stop();    
+        ResetAttackDirection();   
+        canAttack = true;
     }
 
     private void AttackDirection() {

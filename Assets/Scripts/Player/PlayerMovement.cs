@@ -24,12 +24,13 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalInput;
     [SerializeField] private float extraJumps;
     private float jumpCounter;
-
-    private bool isDashing = false;
-    private bool canDash = true;
+    public bool isDashing { get; private set; }
+    private bool canDash;
 
     private void Awake()
     {
+        isDashing = false;
+        canDash = true;
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
@@ -127,10 +128,6 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isGrounded() {
         return Physics2D.BoxCast(boxCollider.bounds.center,boxCollider.bounds.size, 0f, Vector2.down, .1f, groundLayer);
-    }
-
-    public bool canAttack() {
-        return !isDashing;
     }
     
 }
