@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PocongBattle : MonoBehaviour
+public class PocongBattle : GameManager
 {
     [SerializeField] private GameObject battleUI;
     [SerializeField] private GameObject dialogUI;
@@ -29,12 +29,19 @@ public class PocongBattle : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        LoadGame();
         uIManager.isInGame = false;
         pocong.SetActive(false);
         pocongPlaceholder.SetActive(false);
         playerMovement.enabled = false;
         playerAttack.enabled = false;
-        StartCoroutine(MovementTutorial());
+        if (isTutorial)
+        {
+            StartCoroutine(MovementTutorial());
+        } else {
+            StartCoroutine(BattleEntrance());
+        }
+        
     }
 
     private void ShowDialogUI(GameObject dialogUI, bool isShow) {
@@ -56,6 +63,8 @@ public class PocongBattle : MonoBehaviour
 
     private IEnumerator MovementTutorial() {
         // Debug.Log("Gunakan arah panah untuk bergerak");
+        level = 2;
+        SaveGame();
         ShowDialogUI(tutorialUI, true);
         yield return new WaitUntil(() => !dh1.activeInHierarchy);
         tutorialUI.SetActive(false);
@@ -67,6 +76,8 @@ public class PocongBattle : MonoBehaviour
         playerMovement.enabled = false;
         playerAttack.enabled = false;
         uIManager.isInGame = false;
+        isTutorial = false;
+        SaveGame();
         StartCoroutine(BattleEntrance());
     }
 
@@ -108,6 +119,8 @@ public class PocongBattle : MonoBehaviour
         yield return new WaitUntil(() => !dh2.activeInHierarchy);
         ShowDialogUI(endDialogue, false);
         yield return new WaitForSeconds(1);
+        level = 3;
+        SaveGame();
         SceneManager.LoadScene(3);
     }
 }

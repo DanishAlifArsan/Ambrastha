@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour
+public class UIManager : GameManager
 {
     [SerializeField] private GameObject player;
     [SerializeField] private WeaponSwitch weaponSwitch;
@@ -83,6 +83,13 @@ public class UIManager : MonoBehaviour
 
     public void StartGame() {
         SceneManager.LoadScene(1);
+    }
+    public void ContinueGame() {
+        LoadGame();
+        if (level != null)
+        {
+            SceneManager.LoadScene(level);
+        }
     }
     public void Continue() {
         pauseGame(false);

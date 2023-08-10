@@ -11358,6 +11358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ec1b58786c3fd498b7e8e5a84ba9a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTutorial: 1
+  level: 0
   battleUI: {fileID: 8323854970921083916}
   dialogUI: {fileID: 1248731623}
   tutorialUI: {fileID: 857970003}

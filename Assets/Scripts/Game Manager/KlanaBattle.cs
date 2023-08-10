@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class KlanaBattle : MonoBehaviour
+public class KlanaBattle : GameManager
 {
     [SerializeField] private GameObject battleUI;
     [SerializeField] private GameObject dialogUI;
@@ -87,6 +87,8 @@ public class KlanaBattle : MonoBehaviour
         yield return new WaitUntil(() => !dh2.activeInHierarchy);
         ShowDialogUI(endDialogue, false);
         yield return new WaitForSeconds(1);
+        level = 4;
+        SaveGame();
         SceneManager.LoadScene(4);
     }
 }
