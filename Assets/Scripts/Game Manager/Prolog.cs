@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Prolog : MonoBehaviour
+public class Prolog : GameManager
 {
     [SerializeField] private GameObject[] dialogUI;
     [SerializeField] private GameObject[] dh;
@@ -21,6 +21,8 @@ public class Prolog : MonoBehaviour
         {
             b.SetActive(false);
         }
+        level = 1;
+        SaveGame();
         StartCoroutine(BlackScreen());
     }
 
@@ -70,6 +72,16 @@ public class Prolog : MonoBehaviour
         yield return new WaitUntil(() => !dh[2].activeInHierarchy);
         dialogUI[2].SetActive(false);
         yield return new WaitForSeconds(1);
+        level = 2;
+        isTutorial = true;
+        SaveGame();
+        SceneManager.LoadScene(2);
+    }
+
+    public void skipDialogue() {
+        level = 2;
+        isTutorial = true;
+        SaveGame();
         SceneManager.LoadScene(2);
     }
 }

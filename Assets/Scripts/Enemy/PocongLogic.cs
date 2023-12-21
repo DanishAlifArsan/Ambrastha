@@ -11,12 +11,15 @@ public class PocongLogic : MonoBehaviour
     [SerializeField] private GameObject[] waypoints;
     [SerializeField] private float skillDuration;
     [SerializeField] private Text stageNumber, stageName;
+    private Rigidbody2D rb;
     private bool isChange;
 
     private bool isEntrance, isBulletMoving, isEntrance2, isEntrance3, isBattlePhase, isSecondPhase;
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+
         stageName.text = "[Manuk Culi]";
         stageNumber.text = "1/2";
         isChange = true;
@@ -39,26 +42,38 @@ public class PocongLogic : MonoBehaviour
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
             transform.position = Vector3.MoveTowards(transform.position, waypoints[0].transform.position, Time.deltaTime * enemySpeed);
+            // Vector3 directionToTravel = waypoints[0].transform.position - transform.position;
+            // rb.MovePosition(transform.position + (directionToTravel * enemySpeed * Time.deltaTime));
             if (isBulletMoving)
             {
-                objectProjectiles[0].transform.Translate(Vector3.right * 10 * Time.deltaTime);    
+                objectProjectiles[0].transform.rotation = Quaternion.Euler(0,0,0);
+                objectProjectiles[0].GetComponent<Rigidbody2D>().gravityScale = 0;   
+                objectProjectiles[0].transform.Translate(Vector3.right * 10 * Time.deltaTime);     
             }
         }
        
         if (isEntrance2)
         {
             transform.position = Vector3.MoveTowards(transform.position, waypoints[1].transform.position, Time.deltaTime * enemySpeed);
+            // Vector3 directionToTravel = waypoints[0].transform.position - transform.position;
+            // rb.MovePosition(transform.position + (directionToTravel * enemySpeed * Time.deltaTime));
             if (isBulletMoving)
             {
+                objectProjectiles[0].transform.rotation = Quaternion.Euler(0,0,0);
+                objectProjectiles[0].GetComponent<Rigidbody2D>().gravityScale = 0;   
                 objectProjectiles[0].transform.Translate(Vector3.right * 10 * Time.deltaTime);    
             }
         }
         if (isEntrance3)
         {
             transform.position = Vector3.MoveTowards(transform.position, waypoints[2].transform.position, Time.deltaTime * enemySpeed);
+            // Vector3 directionToTravel = waypoints[0].transform.position - transform.position;
+            // rb.MovePosition(transform.position + (directionToTravel * enemySpeed * Time.deltaTime));
             if (isBulletMoving)
             {
-                objectProjectiles[0].transform.Translate(Vector3.down * 5 * Time.deltaTime);    
+                // objectProjectiles[0].transform.Translate(Vector3.down * 5 * Time.deltaTime);
+                objectProjectiles[0].transform.rotation = Quaternion.Euler(0,0,90);
+                objectProjectiles[0].GetComponent<Rigidbody2D>().gravityScale = 1;    
             }
         }
 
