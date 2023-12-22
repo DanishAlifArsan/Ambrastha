@@ -13,8 +13,10 @@ public class Gelu : MonoBehaviour
     [SerializeField] private Text stageNumber, stageName;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float followRange;
+    [SerializeField] private ParticleSystem explosion;
     private Rigidbody2D enemyRB;
     private PlayerHealth health;
+    private Animator animator;
     private ParticleSystem[] particleSystems;
 
     StateMachine stateMachine;
@@ -22,6 +24,7 @@ public class Gelu : MonoBehaviour
     private void OnEnable() {
         enemyRB = GetComponent<Rigidbody2D>();
         health = GetComponent<PlayerHealth>();
+        animator = GetComponent<Animator>();
         particleSystems =  new ParticleSystem[objectProjectiles.Length];
 
         for (int i = 0; i < objectProjectiles.Length; i++)
@@ -39,18 +42,16 @@ public class Gelu : MonoBehaviour
         stageNumber.text = "2/2";
 
         stateMachine = new StateMachine();
-        var pocongWalkToCenter = new PocongWalkState(enemySpeed, transform, waypoints[0]);
         var GeluChase = new GeluChaseState(transform, enemySpeed, playerTransform, followRange, skillDuration);
         var GeluShoot = new GeluShootState(transform, playerTransform, particleSystems, skillDuration);
-        var pocongDeath = new PocongDeathState();
+        var pocongDeath = new PocongDeathState(animator, explosion, objectProjectiles);
 
-        At(pocongWalkToCenter, GeluChase, () => Vector2.Distance(transform.position, waypoints[0].transform.position) < .1f && stateMachine.CurrentState == pocongWalkToCenter);
         At(GeluChase, GeluShoot, () => enemyRB.bodyType == RigidbodyType2D.Static);
         At(GeluShoot, GeluChase, () => particleSystems[0].isStopped);
 
         stateMachine.AddAnyTransition(pocongDeath, () => health.currentHealth <= 0);
 
-        stateMachine.SetState(pocongWalkToCenter);
+        stateMachine.SetState(GeluChase);
 
         void At(IState from, IState to, Func<bool> condititon) {    // buat inisialisasi transisi
             stateMachine.AddTransition(from, to, condititon);

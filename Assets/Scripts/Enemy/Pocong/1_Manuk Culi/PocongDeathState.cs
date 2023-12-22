@@ -1,17 +1,40 @@
+using UnityEngine;
+
 public class PocongDeathState : IState
 {
+    private Animator animator;
+    private ParticleSystem explosion;
+    private GameObject[] objectProjectiles;
+    private bool isAnimPlayed;
+
+    public PocongDeathState(Animator animator, ParticleSystem explosion, GameObject[] objectProjectiles)
+    {
+        this.animator = animator;
+        this.explosion = explosion;
+        this.objectProjectiles = objectProjectiles;
+    }
+
     public void EnterState()
     {
-        throw new System.NotImplementedException();
+        explosion.Play();
+        foreach (var item in objectProjectiles)
+        {
+            item.SetActive(false);
+        }
+        isAnimPlayed = true;
     }
 
     public void ExitState()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void UpdateState()
     {
-        throw new System.NotImplementedException();
+        if (isAnimPlayed)
+        {
+            isAnimPlayed = false;
+            animator.SetTrigger("death");
+        }
     }
 }

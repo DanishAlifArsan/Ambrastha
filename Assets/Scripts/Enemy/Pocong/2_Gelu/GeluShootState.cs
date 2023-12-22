@@ -46,6 +46,7 @@ public class GeluShootState : IState
             foreach (var item in particleSystems)
             {
                 item?.Stop();
+                item?.Clear();
             }  
         }
     }

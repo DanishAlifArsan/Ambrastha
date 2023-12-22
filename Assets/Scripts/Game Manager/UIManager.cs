@@ -38,7 +38,7 @@ public class UIManager : GameManager
             }
         
 
-            if (player.GetComponentInChildren<PlayerHealth>().dead)
+            if (!player.activeInHierarchy)
             {
                 gameOver();
             }  

@@ -41,6 +41,8 @@ public class ManukCuli : MonoBehaviour
         var pocongShootParticle = new PocongShootState(transform, particleProjectiles[0], Vector3.zero, 0, skillDuration, 0, playerTransform);
         var pocongShootTwoBullet = new PocongShootTwoBullets();
 
+        var pocongWalkToCenter = new PocongWalkState(enemySpeed, transform, waypoints[2]);
+
         At(pocongShootToLeft, pocongWalkToLeft, () => Vector2.Distance(transform.position, objectProjectiles[0].transform.position) > 20f && stateMachine.CurrentState == pocongShootToLeft);
         At(pocongWalkToLeft, pocongShootToRight, () => Vector2.Distance(transform.position, waypoints[1].transform.position) < .1f && stateMachine.CurrentState == pocongWalkToLeft);
         At(pocongShootToRight, pocongWalkToUp, () => Vector2.Distance(transform.position, objectProjectiles[0].transform.position) > 20f && stateMachine.CurrentState == pocongShootToRight);
@@ -50,6 +52,8 @@ public class ManukCuli : MonoBehaviour
         At(pocongShootParticle, pocongWalkToRight, () => particleSystems[0].isStopped && stateMachine.CurrentState == pocongShootParticle);
         At(pocongWalkToRight, pocongShootToLeft, () => Vector2.Distance(transform.position, waypoints[0].transform.position) < .1f && stateMachine.CurrentState == pocongWalkToRight);
 
+        stateMachine.AddAnyTransition(pocongWalkToCenter, () => health.currentHealth <= 0);
+       
         stateMachine.SetState(pocongShootToLeft);
 
         void At(IState from, IState to, Func<bool> condititon) {    // buat inisialisasi transisi
@@ -63,7 +67,7 @@ public class ManukCuli : MonoBehaviour
     }
 
     private void CheckHealth() {
-        if (health.currentHealth <= 0) {
+        if (health.currentHealth <= 0 && (Vector2.Distance(transform.position, waypoints[2].transform.position) < .1f)) {
             health.Respawn();
             GetComponent<Gelu>().enabled = true;
             this.enabled = false;
