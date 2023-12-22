@@ -5186,7 +5186,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -12141,6 +12141,7 @@ GameObject:
   - component: {fileID: 882909530}
   - component: {fileID: 882909531}
   - component: {fileID: 882909533}
+  - component: {fileID: 882909534}
   m_Layer: 0
   m_Name: Pocong
   m_TagString: Untagged
@@ -12288,7 +12289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f31d3972843bef4e95dc52252764ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 50
+  startingHealth: 5
   currentHealthBar: {fileID: 8323854971028665859}
   avatar: {fileID: 0}
   hurtAvatar: {fileID: 0}
@@ -12358,6 +12359,31 @@ MonoBehaviour:
   stageNumber: {fileID: 8605902684602457830}
   stageName: {fileID: 4460432676231401461}
   playerTransform: {fileID: 34906900555179783}
+--- !u!114 &882909534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882909525}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcef6e9a44b1df04c8202be8f91910af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 10
+  objectProjectiles:
+  - {fileID: 1494413716}
+  - {fileID: 631488744}
+  - {fileID: 2136733891}
+  - {fileID: 110977782}
+  waypoints:
+  - {fileID: 572833665}
+  skillDuration: 5
+  stageNumber: {fileID: 8605902684602457830}
+  stageName: {fileID: 4460432676231401461}
+  playerTransform: {fileID: 34906900555179783}
+  followRange: 3
 --- !u!114 &938224612 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5099503866034640100, guid: f7cf5fa679b2f824c967f00fef930999, type: 3}
@@ -12506,7 +12532,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -19915,7 +19941,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -25205,7 +25231,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2

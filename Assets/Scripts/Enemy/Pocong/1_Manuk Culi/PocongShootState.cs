@@ -6,6 +6,7 @@ public class PocongShootState : IState
     private Transform enemyTransform;
     private GameObject projectile;
     private float projectileDirection;
+    private float skillDuration;
     private Vector3 projectileRotation;
     private float projectileGravityScale;
     private Transform playerTransform;
@@ -13,12 +14,15 @@ public class PocongShootState : IState
     Rigidbody2D projectileRB;
     SpriteRenderer enemySR;
 
-    public PocongShootState(Transform enemytransform, GameObject projectile, Vector3 projectileRotation, float projectileDirection = 0, float projectileGravityScale = 0, Transform playerTransform = null)
+    float timer;
+
+    public PocongShootState(Transform enemytransform, GameObject projectile, Vector3 projectileRotation, float projectileDirection = 0, float skillDuration = 0, float projectileGravityScale = 0, Transform playerTransform = null)
     {
         this.enemyTransform = enemytransform;
         this.projectile = projectile;
         this.projectileDirection = projectileDirection;
         this.projectileRotation = projectileRotation;
+        this.skillDuration = skillDuration;
         this.projectileGravityScale = projectileGravityScale;
         this.playerTransform = playerTransform;
 
@@ -36,6 +40,7 @@ public class PocongShootState : IState
         if (isParticle())
         {
             projectileParticle.Play();
+            timer = 0;
         } else {
             projectile.transform.position = enemyTransform.position;
             projectile.SetActive(true);
@@ -44,10 +49,8 @@ public class PocongShootState : IState
 
     public void ExitState()
     {
-        if (isParticle())
+        if (!isParticle())
         {
-            projectileParticle.Stop();
-        } else {
             projectile.SetActive(false);
         }
     }
@@ -57,12 +60,22 @@ public class PocongShootState : IState
         if (isParticle())
         {
             EnemyFacing(playerTransform);
-            return;
+            timer += Time.deltaTime;
+
+            if (timer > skillDuration)
+            {
+                timer = 0;
+                projectileParticle.Stop();
+                return;   
+            }
+            
+        } else {
+            projectile.transform.rotation = Quaternion.Euler(projectileRotation);
+            projectileRB.gravityScale = projectileGravityScale;   
+            projectile.transform.Translate(new Vector3(projectileDirection, 0, 0) * 10 * Time.deltaTime);  
+            EnemyFacing(projectile.transform);
         }
-        projectile.transform.rotation = Quaternion.Euler(projectileRotation);
-        projectileRB.gravityScale = projectileGravityScale;   
-        projectile.transform.Translate(new Vector3(projectileDirection, 0, 0) * 10 * Time.deltaTime);  
-        EnemyFacing(projectile.transform);
+        
     }
 
     private void EnemyFacing(Transform target) {
