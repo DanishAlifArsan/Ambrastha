@@ -5899,7 +5899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &374560801
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10970,6 +10970,10 @@ PrefabInstance:
       propertyPath: hurtAvatar
       value: 
       objectReference: {fileID: 21300000, guid: d9c935a24f8a4694ea53f5e23570a1c8, type: 3}
+    - target: {fileID: 2124321049473615600, guid: be8df5a522f880648926a6e08bea2665, type: 3}
+      propertyPath: startingHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2124321049473615600, guid: be8df5a522f880648926a6e08bea2665, type: 3}
       propertyPath: currentHealthBar
       value: 
@@ -16172,7 +16176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &593414596
 Transform:
   m_ObjectHideFlags: 0
@@ -16200,6 +16204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3827ef4b5eca641bab1aacd9d0c3c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTutorial: 1
+  level: 0
   battleUI: {fileID: 1052939036}
   dialogUI: {fileID: 1248731623}
   endDialogue: {fileID: 1580423995}

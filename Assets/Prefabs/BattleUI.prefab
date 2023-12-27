@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3403340985793418787}
   - component: {fileID: 2028497945843331303}
   - component: {fileID: 1590293574986062075}
+  - component: {fileID: 2403713233926064488}
   m_Layer: 5
   m_Name: Dewi Sekartaji
   m_TagString: Untagged
@@ -35,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -75.2, y: 78}
-  m_SizeDelta: {x: 125, y: 125}
+  m_AnchoredPosition: {x: -85.84389, y: 88.64386}
+  m_SizeDelta: {x: 103.7122, y: 103.7122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2028497945843331303
 CanvasRenderer:
@@ -76,6 +77,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &2403713233926064488
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768897870608498140}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 39065478f7eb2fa40bfaf1e3357c2d31, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1254789771646747212
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +135,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -272}
+  m_AnchoredPosition: {x: 5, y: -195}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &845626185525137979
@@ -186,6 +208,7 @@ GameObject:
   - component: {fileID: 2455516304438393088}
   - component: {fileID: 3337012804045242532}
   - component: {fileID: 3735978897172844673}
+  - component: {fileID: 2805192063721606080}
   m_Layer: 5
   m_Name: Klana Sewandana
   m_TagString: Untagged
@@ -210,8 +233,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -75.2, y: 78}
-  m_SizeDelta: {x: 125, y: 125}
+  m_AnchoredPosition: {x: -85.84389, y: 88.64386}
+  m_SizeDelta: {x: 103.7122, y: 103.7122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3337012804045242532
 CanvasRenderer:
@@ -251,6 +274,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &2805192063721606080
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730400812323667725}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 39065478f7eb2fa40bfaf1e3357c2d31, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1904381533102114548
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +386,7 @@ GameObject:
   - component: {fileID: 6663276060795760221}
   - component: {fileID: 5884481947676398976}
   - component: {fileID: 7719195111226992305}
+  - component: {fileID: 1980324150107481554}
   m_Layer: 5
   m_Name: ' Panji Asmorobangun'
   m_TagString: Untagged
@@ -366,8 +411,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -75.2, y: 78}
-  m_SizeDelta: {x: 125, y: 125}
+  m_AnchoredPosition: {x: -85.84389, y: 88.64386}
+  m_SizeDelta: {x: 103.7122, y: 103.7122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5884481947676398976
 CanvasRenderer:
@@ -407,6 +452,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1980324150107481554
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503149274469236549}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 39065478f7eb2fa40bfaf1e3357c2d31, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2799261259223443705
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,6 +564,7 @@ GameObject:
   - component: {fileID: 79441620348778445}
   - component: {fileID: 6731714055369194524}
   - component: {fileID: 3990141705353721540}
+  - component: {fileID: 4947325995707377900}
   m_Layer: 5
   m_Name: player avatar
   m_TagString: Untagged
@@ -563,6 +630,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4947325995707377900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111712474271300673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 17.14, y: 10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4843821281222967966
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,8 +836,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 50}
+  m_AnchoredPosition: {x: 0, y: 24.5}
+  m_SizeDelta: {x: 400, y: 14.6303}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8323854971132740921
 CanvasRenderer:
@@ -1022,6 +1104,7 @@ GameObject:
   - component: {fileID: 8323854971754705069}
   - component: {fileID: 8323854971754705071}
   - component: {fileID: 8323854971754705070}
+  - component: {fileID: 1327897461036808921}
   m_Layer: 5
   m_Name: HealhBar
   m_TagString: Untagged
@@ -1087,6 +1170,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1327897461036808921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8323854971754705068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 0, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8323854971883313473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,6 +1234,7 @@ GameObject:
   - component: {fileID: 8323854971962674461}
   - component: {fileID: 8323854971962674463}
   - component: {fileID: 8323854971962674462}
+  - component: {fileID: 4290760217498364108}
   m_Layer: 5
   m_Name: Staminabar
   m_TagString: Untagged
@@ -1160,8 +1259,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 50}
+  m_AnchoredPosition: {x: 0, y: 24.5}
+  m_SizeDelta: {x: 400, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8323854971962674463
 CanvasRenderer:
@@ -1201,6 +1300,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4290760217498364108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8323854971962674460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8323854972083239180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,6 +1326,7 @@ GameObject:
   - component: {fileID: 8323854972083239181}
   - component: {fileID: 8323854972083239183}
   - component: {fileID: 8323854972083239182}
+  - component: {fileID: 6244703502222937723}
   m_Layer: 5
   m_Name: HealhBar (1)
   m_TagString: Untagged
@@ -1277,6 +1392,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6244703502222937723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8323854972083239180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8323854972393521229
 GameObject:
   m_ObjectHideFlags: 0

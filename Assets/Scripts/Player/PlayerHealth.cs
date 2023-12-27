@@ -54,14 +54,6 @@ public class PlayerHealth : MonoBehaviour
                 }
                 transform.parent.GetComponent<Animator>().SetTrigger("death");
             }
-            else {
-                // MonoBehaviour[] comps = GetComponents<MonoBehaviour>();
-                // foreach(MonoBehaviour c in comps)
-                // {
-                //     c.enabled = false;
-                // }
-                // GetComponent<Animator>().SetTrigger("death");
-            }
         }
     }
 
@@ -80,8 +72,6 @@ public class PlayerHealth : MonoBehaviour
         if (transform.parent != null)
         {
             transform.parent.gameObject.SetActive(false); 
-        } else {
-            // gameObject.SetActive(false); 
         }
     }
 

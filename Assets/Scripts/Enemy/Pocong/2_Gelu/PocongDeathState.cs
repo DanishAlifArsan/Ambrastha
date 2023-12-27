@@ -21,6 +21,7 @@ public class PocongDeathState : IState
         {
             item.SetActive(false);
         }
+        animator.SetTrigger("death");
         isAnimPlayed = true;
     }
 
@@ -31,10 +32,10 @@ public class PocongDeathState : IState
 
     public void UpdateState()
     {
-        if (isAnimPlayed)
-        {
-            isAnimPlayed = false;
-            animator.SetTrigger("death");
-        }
+        // if (isAnimPlayed)
+        // {
+        //     isAnimPlayed = false;
+        //     animator.SetTrigger("death");
+        // }
     }
 }
