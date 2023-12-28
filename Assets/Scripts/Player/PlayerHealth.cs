@@ -44,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (dead && respawnCounter <= 0)
         {
-            dead = false;
+            // dead = false;
             if (transform.parent != null)
             {
                 MonoBehaviour[] comps = transform.parent.GetComponents<MonoBehaviour>();
@@ -53,6 +53,7 @@ public class PlayerHealth : MonoBehaviour
                     c.enabled = false;
                 }
                 transform.parent.GetComponent<Animator>().SetTrigger("death");
+                transform.parent = null;
             }
         }
     }
