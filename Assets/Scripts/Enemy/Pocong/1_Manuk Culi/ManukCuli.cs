@@ -39,7 +39,7 @@ public class ManukCuli : MonoBehaviour
         var pocongWalkToUp = new PocongWalkState(enemySpeed, transform, waypoints[2]);
         var pocongShootToDown = new PocongShootState(transform, objectProjectiles[0], new Vector3(0,0,90), 0, 0, 1);
         var pocongShootParticle = new PocongShootState(transform, particleProjectiles[0], Vector3.zero, 0, skillDuration, 0, playerTransform);
-        var pocongShootTwoBullet = new PocongShootTwoBullets();
+        var pocongShootTwoBullet = new PocongShootTwoBullets(transform, objectProjectiles[1], objectProjectiles[2], particleSystems[1], particleSystems[2], skillDuration, playerTransform, this);
 
         var pocongWalkToCenter = new PocongWalkState(enemySpeed, transform, waypoints[2]);
 
@@ -47,8 +47,8 @@ public class ManukCuli : MonoBehaviour
         At(pocongWalkToLeft, pocongShootToRight, () => Vector2.Distance(transform.position, waypoints[1].transform.position) < .1f && stateMachine.CurrentState == pocongWalkToLeft);
         At(pocongShootToRight, pocongWalkToUp, () => Vector2.Distance(transform.position, objectProjectiles[0].transform.position) > 20f && stateMachine.CurrentState == pocongShootToRight);
         At(pocongWalkToUp, pocongShootToDown, () => Vector2.Distance(transform.position, waypoints[2].transform.position) < .1f && stateMachine.CurrentState == pocongWalkToUp);
-        At(pocongShootToDown, pocongShootParticle,() => Vector2.Distance(transform.position, objectProjectiles[0].transform.position) > 10f && stateMachine.CurrentState == pocongShootToDown);
-        // At(pocongShootTwoBullet, pocongShootParticle, );
+        At(pocongShootToDown, pocongShootTwoBullet,() => Vector2.Distance(transform.position, objectProjectiles[0].transform.position) > 10f && stateMachine.CurrentState == pocongShootToDown);
+        At(pocongShootTwoBullet, pocongShootParticle, () => objectProjectiles[1].GetComponent<Rigidbody2D>().gravityScale == 1  && stateMachine.CurrentState == pocongShootTwoBullet);
         At(pocongShootParticle, pocongWalkToRight, () => particleSystems[0].isStopped && stateMachine.CurrentState == pocongShootParticle);
         At(pocongWalkToRight, pocongShootToLeft, () => Vector2.Distance(transform.position, waypoints[0].transform.position) < .1f && stateMachine.CurrentState == pocongWalkToRight);
 
@@ -69,12 +69,13 @@ public class ManukCuli : MonoBehaviour
     private void CheckHealth() {
         if (health.currentHealth <= 0 && (Vector2.Distance(transform.position, waypoints[2].transform.position) < .1f)) {
             health.Respawn();
-            GetComponent<Gelu>().enabled = true;
+            GetComponent<Gelu>().enabled = true;;
             this.enabled = false;
         } 
     }
 
     private void OnDisable() {
+        StopAllCoroutines();
         foreach (var item in objectProjectiles)
         {
             item.SetActive(false);
