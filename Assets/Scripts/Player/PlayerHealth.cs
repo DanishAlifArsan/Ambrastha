@@ -13,10 +13,13 @@ public class PlayerHealth : MonoBehaviour
     [HideInInspector] public bool dead;
     [HideInInspector] public bool damageReduction = false;
     public float respawnCounter = 0;
+
+    Sprite tempSprite;
     
     private void Start()
     {
         currentHealth = startingHealth;
+        tempSprite = avatar?.sprite;
     }
 
     public void TakeDamage(float _damage) {
@@ -63,10 +66,10 @@ public class PlayerHealth : MonoBehaviour
     }
 
     private IEnumerator Hurt() {
-        Sprite temp = avatar.sprite;
+        
         avatar.sprite = hurtAvatar;
         yield return new WaitForSeconds(0.25f);
-        avatar.sprite = temp;
+        avatar.sprite = tempSprite;
     }
 
     public void Deactivate() {

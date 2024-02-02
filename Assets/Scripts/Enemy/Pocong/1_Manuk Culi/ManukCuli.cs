@@ -69,7 +69,7 @@ public class ManukCuli : MonoBehaviour
     private void CheckHealth() {
         if (health.currentHealth <= 0 && (Vector2.Distance(transform.position, waypoints[2].transform.position) < .1f)) {
             health.Respawn();
-            GetComponent<Gelu>().enabled = true;;
+            GetComponent<Gelu>().enabled = true;
             this.enabled = false;
         } 
     }
