@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Prolog.unity
     guid: e9f0b8cf4411fd141aa55890dbbf9765
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 81b049cd3b7942e4ca1904f9147141fe
+  - enabled: 1
     path: Assets/Scenes/Pocong Battle.unity
     guid: 6270b4ea6a0173a4490e4ccbcfd9c9bf
   - enabled: 1
