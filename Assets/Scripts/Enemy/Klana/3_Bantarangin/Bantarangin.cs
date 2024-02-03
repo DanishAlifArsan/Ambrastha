@@ -35,8 +35,8 @@ public class Bantarangin : MonoBehaviour
 
         stateMachine = new StateMachine();
 
-        var bantaranginLaserVertical = new BantaranginLaserState(projectileVertical, skillDuration);
-        var bantaranginLaserHorizontal = new BantaranginLaserState(projectileHorizontal, skillDuration);
+        var bantaranginLaserVertical = new BantaranginLaserState(projectileVertical, Vector2.down, skillDuration, enemySpeed);
+        var bantaranginLaserHorizontal = new BantaranginLaserState(projectileHorizontal, Vector2.left, skillDuration, enemySpeed);
         var klanaDeath = new KlanaDeathState(anim, explosion, magicCircle);
 
         At(bantaranginLaserVertical, bantaranginLaserHorizontal, () => !projectileVertical[0].activeInHierarchy && stateMachine.CurrentState == bantaranginLaserVertical);

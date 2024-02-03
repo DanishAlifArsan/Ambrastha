@@ -35,7 +35,7 @@ public class SamandimanShootState : IState
 
     public void UpdateState()
     {
-        magicCircle.transform.Rotate(new Vector3(0,0,1), -90 * Time.deltaTime);
+        magicCircle.transform.Rotate(new Vector3(0,0,1), 45 * Time.deltaTime);
         projectile.transform.Rotate(0.0f, 0.0f, 45*Time.deltaTime, Space.World);
 
         Vector2 followPosition = new Vector2(playerTransform.position.x, transform.position.y);
