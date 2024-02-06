@@ -103,6 +103,11 @@ public class UIManager : GameManager
     public void MainMenu() {
         SceneManager.LoadScene(0);
     }
+    public void SwitchScene(int index) {
+        level = index;
+        SaveGame();
+        SceneManager.LoadScene(index);
+    }
     public void Quit() {
         Application.Quit();
     }
