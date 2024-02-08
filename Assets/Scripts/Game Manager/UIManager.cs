@@ -85,7 +85,7 @@ public class UIManager : GameManager
     }
 
     public void StartGame() {
-        SceneManager.LoadScene(1);
+        SwitchScene(1);
     }
     public void ContinueGame() {
         LoadGame();

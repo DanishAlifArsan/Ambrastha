@@ -63,7 +63,7 @@ public class PocongBattle : GameManager
 
     private IEnumerator MovementTutorial() {
         // Debug.Log("Gunakan arah panah untuk bergerak");
-        level = 2;
+        level = 3;
         SaveGame();
         ShowDialogUI(tutorialUI, true);
         yield return new WaitUntil(() => !dh1.activeInHierarchy);
