@@ -8,12 +8,14 @@ public class BattleManager : GameManager
     [SerializeField] CameraFollow cam;
     [SerializeField] PlayerAttack playerAttack;
     [SerializeField] PlayerMovement playerMovement;
+    [SerializeField] PlayerHealth playerHealth;
     [SerializeField] GameObject battleUI;
     [SerializeField] GameObject enemy;
     [SerializeField] GameObject enemyPlaceholder;
     [SerializeField] Flowchart flowchart;
     [SerializeField] GameObject skipButton;
     [SerializeField] UIManager uIManager;
+    [SerializeField] private GameObject mask;
     bool battleStart;
 
     public void BattleStart(bool status) {
@@ -46,6 +48,17 @@ public class BattleManager : GameManager
         if(battleStart && !enemy.activeInHierarchy) 
         {
             flowchart?.ExecuteBlock("battle end");    
+        }
+
+        if (mask != null)
+        {
+            if (mask.activeInHierarchy)
+            {
+                playerHealth.damageReduction = true;
+            } else {
+                playerHealth.damageReduction = false;
+            
+            }
         }
     }
 
