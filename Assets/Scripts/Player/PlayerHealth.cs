@@ -76,6 +76,8 @@ public class PlayerHealth : MonoBehaviour
         if (transform.parent != null)
         {
             transform.parent.gameObject.SetActive(false); 
+        } else {
+            transform.gameObject.SetActive(false);
         }
     }
 

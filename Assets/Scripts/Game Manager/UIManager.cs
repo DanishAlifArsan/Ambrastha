@@ -85,7 +85,7 @@ public class UIManager : GameManager
     }
 
     public void StartGame() {
-        SceneManager.LoadScene(1);
+        SwitchScene(1);
     }
     public void ContinueGame() {
         LoadGame();
@@ -102,6 +102,11 @@ public class UIManager : GameManager
     }
     public void MainMenu() {
         SceneManager.LoadScene(0);
+    }
+    public void SwitchScene(int index) {
+        level = index;
+        SaveGame();
+        SceneManager.LoadScene(index);
     }
     public void Quit() {
         Application.Quit();
