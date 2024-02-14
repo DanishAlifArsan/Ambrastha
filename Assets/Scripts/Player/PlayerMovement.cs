@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashPower;
     [SerializeField] private float dashCost;
     [SerializeField] private float dashCooldown;
+    [SerializeField] private float distanceBetweenImage;
     [SerializeField] private TrailRenderer trailRenderer;
+    private float lastDashPos;
     public Rigidbody2D body;
     private Animator anim;
     private BoxCollider2D boxCollider;
@@ -43,6 +46,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isDashing)
         {
+            if (MathF.Abs(transform.position.x - lastDashPos) > distanceBetweenImage)
+            {
+                AfterImagePool.instance.GetFromPool();
+                lastDashPos += transform.position.x;
+            }
             return;
         }
         horizontalInput = Input.GetAxis("Horizontal");
@@ -109,6 +117,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private IEnumerator Dash() {
+        AfterImagePool.instance.GetFromPool();
+        lastDashPos += transform.position.x;
         hitbox.enabled = false;
         canDash = false;
         isDashing = true;

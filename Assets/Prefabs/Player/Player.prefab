@@ -4928,7 +4928,7 @@ GameObject:
   - component: {fileID: 6104397782598372881}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5069,6 +5069,7 @@ MonoBehaviour:
   dashPower: 8
   dashCost: 2
   dashCooldown: 0.5
+  distanceBetweenImage: 0.05
   trailRenderer: {fileID: 5322488474971535670}
   body: {fileID: 3130482086625790868}
   groundLayer:
