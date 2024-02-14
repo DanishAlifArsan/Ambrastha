@@ -47,10 +47,10 @@ public class SamandimanShootState : IState
 
         if (playerTransform.position.x > transform.position.x)
         {
-            enemySR.flipX = false;
+            enemySR.flipX = true;
         } else if (playerTransform.position.x < transform.position.x)
         {
-            enemySR.flipX = true;
+            enemySR.flipX = false;
         }
     }
 }

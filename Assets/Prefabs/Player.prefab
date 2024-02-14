@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c387d3e32404bcc91c60318d766bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewSize: 4
+  viewSize: 5
   primaryAspectRatio: {x: 1920, y: 1080}
   secondaryAspectRatio: {x: 2, y: 1}
 --- !u!1 &3130482086195339480

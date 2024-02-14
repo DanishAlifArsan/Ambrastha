@@ -5,12 +5,14 @@ public class KlanaMoveToCenterState : IState
     private float enemySpeed;
     private Transform enemyTransform;
     private Transform waypoint;
+    private SpriteRenderer enemySR;
 
-    public KlanaMoveToCenterState(float enemySpeed, Transform enemyTransform, Transform waypoint)
+    public KlanaMoveToCenterState(float enemySpeed, Transform enemyTransform, Transform waypoint, SpriteRenderer enemySR)
     {
         this.enemySpeed = enemySpeed;
         this.enemyTransform = enemyTransform;
         this.waypoint = waypoint;
+        this.enemySR = enemySR;
     }
 
     public void EnterState()
@@ -31,9 +33,9 @@ public class KlanaMoveToCenterState : IState
     private void EnemyFacing() {
         if (enemyTransform.position.x > waypoint.position.x)
         {
-            enemyTransform.localScale = new Vector3(Mathf.Abs(enemyTransform.localScale.x) * -1, enemyTransform.localScale.y, enemyTransform.localScale.z);
+            enemySR.flipX= true;
         } else {
-            enemyTransform.localScale = new Vector3(Mathf.Abs(enemyTransform.localScale.x), enemyTransform.localScale.y, enemyTransform.localScale.z);
+            enemySR.flipX= true;
         }
     }
 }

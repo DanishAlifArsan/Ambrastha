@@ -33,9 +33,9 @@ public class KlanaSwitchState : IState
     private void EnemyFacing() {
         if (enemyTransform.position.x > waypoint.position.x)
         {
-            enemySR.flipX = false;   
+            enemySR.flipX = true;   
         } else {
-            enemySR.flipX = true;
+            enemySR.flipX = false;
         }
     }
 }

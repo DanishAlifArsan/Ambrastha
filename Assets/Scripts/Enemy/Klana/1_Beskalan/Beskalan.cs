@@ -13,6 +13,7 @@ public class Beskalan : MonoBehaviour
     [SerializeField] private Text stageNumber, stageName;
     [SerializeField] private Transform playerTransform;
     Rigidbody2D enemyRB;
+    SpriteRenderer enemySR;
 
     private PlayerHealth health;
 
@@ -21,6 +22,7 @@ public class Beskalan : MonoBehaviour
     private void Awake() {
         health = GetComponent<PlayerHealth>();
         enemyRB = GetComponent<Rigidbody2D>();
+        enemySR = GetComponent<SpriteRenderer>();
     }
 
     // Start is called before the first frame update
@@ -30,14 +32,23 @@ public class Beskalan : MonoBehaviour
         stageNumber.text = "1/3";
         stateMachine = new StateMachine();
 
-        var beskalanShockwave = new BeskalanShockwaveState(transform, shockwave, waypoints);
-        var beskalanJump = new BeskalanJumpState(transform, waypoints, enemyRB, playerTransform, bullet);
-        var klanaMoveToCenter = new KlanaMoveToCenterState(enemySpeed, transform, waypoints[2]);
+        var beskalanShockwaveRight = new BeskalanShockwaveState(transform, shockwave, waypoints, Vector2.right, enemySR);
+        var beskalanShockwaveLeft = new BeskalanShockwaveState(transform, shockwave, waypoints, Vector2.left, enemySR);
+        var klanaMoveToRight = new BeskalanMoveState(enemySpeed, transform, waypoints[0], enemySR, playerTransform, bullet); 
+        var klanaMoveToLeft = new BeskalanMoveState(enemySpeed, transform, waypoints[1], enemySR, playerTransform, bullet); 
+        var klanaMoveToCenter = new BeskalanMoveState(enemySpeed, transform, waypoints[2], enemySR, playerTransform, bullet); 
+        var klanaMoveToCenter2 = new BeskalanMoveState(enemySpeed, transform, waypoints[2], enemySR, playerTransform, bullet); 
+        var klanaMoveToSwitch = new KlanaMoveToCenterState(enemySpeed, transform, waypoints[2], enemySR); 
 
-        At(beskalanShockwave, beskalanJump, () => Vector2.Distance(transform.position, shockwave.transform.position) > 50f && stateMachine.CurrentState == beskalanShockwave);
-        At(beskalanJump, beskalanShockwave, () => enemyRB.gravityScale == 0 && stateMachine.CurrentState == beskalanJump);
+        At(beskalanShockwaveLeft, klanaMoveToCenter, () => Vector2.Distance(transform.position, shockwave.transform.position) > 50f && stateMachine.CurrentState == beskalanShockwaveLeft);
+        At(klanaMoveToCenter, klanaMoveToLeft, () => Vector2.Distance(transform.position, waypoints[2].position) < .1f && stateMachine.CurrentState == klanaMoveToCenter);
+        At(klanaMoveToLeft, beskalanShockwaveRight, () => Vector2.Distance(transform.position, waypoints[1].position) < .1f && stateMachine.CurrentState == klanaMoveToLeft);
+        At(beskalanShockwaveRight, klanaMoveToCenter2, () => Vector2.Distance(transform.position, shockwave.transform.position) > 50f && stateMachine.CurrentState == beskalanShockwaveRight);
+        // At(beskalanShockwaveRight, klanaMoveToRight, () => Vector2.Distance(transform.position, shockwave.transform.position) > 50f && stateMachine.CurrentState == beskalanShockwaveRight);
+        At(klanaMoveToCenter2, klanaMoveToRight, () => Vector2.Distance(transform.position, waypoints[2].position) < .1f && stateMachine.CurrentState == klanaMoveToCenter2);
+        At(klanaMoveToRight, beskalanShockwaveLeft, () => Vector2.Distance(transform.position, waypoints[0].position) < .1f && stateMachine.CurrentState == klanaMoveToRight);
 
-        stateMachine.SetState(beskalanShockwave);
+        stateMachine.SetState(beskalanShockwaveLeft);
 
         stateMachine.AddAnyTransition(klanaMoveToCenter, () => health.currentHealth <= 0);
 

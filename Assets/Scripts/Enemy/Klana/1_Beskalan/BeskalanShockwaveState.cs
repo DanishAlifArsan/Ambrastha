@@ -5,13 +5,17 @@ public class BeskalanShockwaveState : IState
     private Transform enemyTransform;
     private GameObject shockwave;
     private Transform[] waypoints;
+    private Vector2 direction;
+    private SpriteRenderer enemySR;
     Transform from;
 
-    public BeskalanShockwaveState(Transform enemyTransform, GameObject shockwave, Transform[] waypoints)
+    public BeskalanShockwaveState(Transform enemyTransform, GameObject shockwave, Transform[] waypoints, Vector2 direction, SpriteRenderer enemySR)
     {
         this.enemyTransform = enemyTransform;
         this.shockwave = shockwave;
         this.waypoints = waypoints;
+        this.direction = direction;
+        this.enemySR = enemySR;
     }
 
     public void EnterState()
@@ -35,15 +39,17 @@ public class BeskalanShockwaveState : IState
 
     public void UpdateState()
     { 
-        shockwave.transform.Translate(Vector3.right * 20 * Time.deltaTime); 
+        shockwave.transform.Translate(direction * 20 * Time.deltaTime); 
     }
 
     private void EnemyFacing() {
-        if (enemyTransform.position.x > from.position.x)
+        if (enemyTransform.position.x < from.position.x)
         {
-            enemyTransform.localScale = new Vector3(Mathf.Abs(enemyTransform.localScale.x), enemyTransform.localScale.y, enemyTransform.localScale.z);
+            enemySR.flipX= true;
+            shockwave.transform.localScale = new Vector2(Mathf.Abs( shockwave.transform.localScale.x) * -1, shockwave.transform.localScale.y);
         } else {
-            enemyTransform.localScale = new Vector3(Mathf.Abs(enemyTransform.localScale.x) * -1, enemyTransform.localScale.y, enemyTransform.localScale.z);
+            enemySR.flipX= false;
+            shockwave.transform.localScale = new Vector2(Mathf.Abs( shockwave.transform.localScale.x), shockwave.transform.localScale.y);
         }
     }
 }
