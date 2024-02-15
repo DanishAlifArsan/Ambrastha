@@ -44,7 +44,6 @@ public class Beskalan : MonoBehaviour
         At(klanaMoveToCenter, klanaMoveToLeft, () => Vector2.Distance(transform.position, waypoints[2].position) < .1f && stateMachine.CurrentState == klanaMoveToCenter);
         At(klanaMoveToLeft, beskalanShockwaveRight, () => Vector2.Distance(transform.position, waypoints[1].position) < .1f && stateMachine.CurrentState == klanaMoveToLeft);
         At(beskalanShockwaveRight, klanaMoveToCenter2, () => Vector2.Distance(transform.position, shockwave.transform.position) > 50f && stateMachine.CurrentState == beskalanShockwaveRight);
-        // At(beskalanShockwaveRight, klanaMoveToRight, () => Vector2.Distance(transform.position, shockwave.transform.position) > 50f && stateMachine.CurrentState == beskalanShockwaveRight);
         At(klanaMoveToCenter2, klanaMoveToRight, () => Vector2.Distance(transform.position, waypoints[2].position) < .1f && stateMachine.CurrentState == klanaMoveToCenter2);
         At(klanaMoveToRight, beskalanShockwaveLeft, () => Vector2.Distance(transform.position, waypoints[0].position) < .1f && stateMachine.CurrentState == klanaMoveToRight);
 

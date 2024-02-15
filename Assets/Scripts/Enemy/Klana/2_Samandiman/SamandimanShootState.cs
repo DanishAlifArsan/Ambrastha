@@ -45,10 +45,10 @@ public class SamandimanShootState : IState
             transform.position = Vector2.MoveTowards(transform.position, followPosition, enemySpeed * Time.deltaTime);
         }
 
-        if (playerTransform.position.x > transform.position.x)
+        if (playerTransform.position.x < transform.position.x)
         {
             enemySR.flipX = true;
-        } else if (playerTransform.position.x < transform.position.x)
+        } else if (playerTransform.position.x > transform.position.x)
         {
             enemySR.flipX = false;
         }

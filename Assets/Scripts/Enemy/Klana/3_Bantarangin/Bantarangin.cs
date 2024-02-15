@@ -74,10 +74,10 @@ public class Bantarangin : MonoBehaviour
     }
 
     private void EnemyFacing() {
-        if (playerTransform.position.x > transform.position.x)
+        if (playerTransform.position.x < transform.position.x)
         {
             enemySR.flipX = true;
-        } else if (playerTransform.position.x < transform.position.x)
+        } else if (playerTransform.position.x > transform.position.x)
         {
             enemySR.flipX = false;
         }
