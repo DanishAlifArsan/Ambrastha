@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
             if (MathF.Abs(transform.position.x - lastDashPos) > distanceBetweenImage)
             {
                 AfterImagePool.instance.GetFromPool();
-                lastDashPos += transform.position.x;
+                lastDashPos = transform.position.x;
             }
             return;
         }
@@ -118,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator Dash() {
         AfterImagePool.instance.GetFromPool();
-        lastDashPos += transform.position.x;
+        lastDashPos = transform.position.x;
         hitbox.enabled = false;
         canDash = false;
         isDashing = true;

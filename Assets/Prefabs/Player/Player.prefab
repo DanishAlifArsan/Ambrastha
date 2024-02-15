@@ -5069,7 +5069,7 @@ MonoBehaviour:
   dashPower: 8
   dashCost: 2
   dashCooldown: 0.5
-  distanceBetweenImage: 0.05
+  distanceBetweenImage: 0.5
   trailRenderer: {fileID: 5322488474971535670}
   body: {fileID: 3130482086625790868}
   groundLayer:
