@@ -25,4 +25,8 @@ public class DialogueHolder : MonoBehaviour
             transform.GetChild(i).gameObject.SetActive(false);
         }
     }
+
+    public void SkipDialogue() {
+        gameObject.SetActive(false);
+    }
 }

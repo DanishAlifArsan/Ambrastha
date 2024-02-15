@@ -13,6 +13,8 @@ public class UIManager : GameManager
     [Header ("pause")]
     [SerializeField] private GameObject pauseScreen;
     public bool isInGame = false;
+    private bool isCanPause = true;
+    private Animator pauseAnimator;
 
     private void Start()
     {
@@ -20,6 +22,7 @@ public class UIManager : GameManager
         {
             gameOverScreen.SetActive(false);
             pauseScreen.SetActive(false);
+            pauseAnimator = pauseScreen.GetComponent<Animator>();
         }
     }
 
@@ -28,7 +31,7 @@ public class UIManager : GameManager
     {
         if (isInGame)
         {
-             if (Input.GetKeyDown(KeyCode.Escape))
+             if (Input.GetKeyDown(KeyCode.Escape) && isCanPause)
             {
                 if(pauseScreen.activeInHierarchy) {
                     pauseGame(false);
@@ -37,8 +40,7 @@ public class UIManager : GameManager
                 }  
             }
         
-
-            if (player.GetComponentInChildren<PlayerHealth>().dead)
+            if (!player.activeInHierarchy)
             {
                 gameOver();
             }  
@@ -57,6 +59,8 @@ public class UIManager : GameManager
     }
 
     private void gameOver() {
+        enablePlayer(false);
+        isCanPause = false;
         gameOverScreen.SetActive(true);
 
     }
@@ -71,18 +75,17 @@ public class UIManager : GameManager
     }
 
     private void pauseGame(bool status) {
-        pauseScreen.SetActive(status);
-        
-
-        if(status) {
-            enablePlayer(false);
+        if(!status) {
+            pauseAnimator.SetTrigger("exit");
         } else {
-            enablePlayer(true);
+            pauseScreen.SetActive(true);
         }
+
+        enablePlayer(!status);
     }
 
     public void StartGame() {
-        SceneManager.LoadScene(1);
+        SwitchScene(1);
     }
     public void ContinueGame() {
         LoadGame();
@@ -99,6 +102,11 @@ public class UIManager : GameManager
     }
     public void MainMenu() {
         SceneManager.LoadScene(0);
+    }
+    public void SwitchScene(int index) {
+        level = index;
+        SaveGame();
+        SceneManager.LoadScene(index);
     }
     public void Quit() {
         Application.Quit();
